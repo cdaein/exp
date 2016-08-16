@@ -1,0 +1,109 @@
+[
+  {
+    "semester": "Fall 2016",
+    "classes": [ 
+      {
+        "title": "Graphic Design 2",
+        "day": "Wednesday",
+        "students": [ 
+          {
+              "fullname": "Aaron A"
+          }, 
+          {
+              "fullname": "Brad B"
+          },
+          {
+              "fullname": "Charlie C"
+          },
+          {
+              "fullname": "David D"
+          },
+          {
+              "fullname": "Ernie E"
+          },
+          {
+              "fullname": "Frank F"
+          },
+          {
+              "fullname": "Graham G"
+          },
+          {
+              "fullname": "Hannah H"
+          },
+          {
+              "fullname": "Irene I"
+          },
+          {
+            "fullname": "Jack J"
+          },
+          {
+            "fullname": "Kevin K"
+          },
+          {
+            "fullname": "Lebron L"
+          },
+          {
+            "fullname": "Michael M"
+          },
+          {
+            "fullname": "Nate N"
+          }
+        ]
+      },
+      {
+        "title": "Graphic Design 3 Monday",
+        "day": "Monday",
+        "students": [
+          {
+              "fullname": "고고"
+          },
+          {
+              "fullname": "노노"
+          },
+          {
+              "fullname": "도도"
+          },
+          {
+              "fullname": "로로"
+          },
+          {
+              "fullname": "모모"
+          },
+          {
+              "fullname": "보보"
+          },
+          {
+              "fullname": "소소"
+          }
+        ]
+      },
+      {
+        "title": "Graphic Design 3 Tuesday",
+        "day": "Tuesday",
+        "students": [
+          {
+            "fullname": "a"
+          },
+          {
+            "fullname": "b"
+          },
+          {
+            "fullname": "c"
+          },
+          {
+            "fullname": "d"
+          },
+          {
+            "fullname": "e"
+          },
+          {
+            "fullname": "f"
+          },
+          {
+            "fullname": "g"
+          }
+        ]
+      }
+    ]
+  }
+]
