@@ -3,13 +3,44 @@
 <head>
   <meta charset="utf-8">
   <title>Random group</title>
-  <script src="../scripts/jquery.min.js"></script>
+  <!-- <link rel="stylesheet" href="../css/reset.css"> -->
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <script src="../js/jquery.min.js"></script>
+  <style>
+    /* =global */
+    html { font-size: 62.5%; }
+    h1 { font-size: 1.8rem; }
+    
+    .container {
+      margin: 0 auto;
+      width: 80%;
+      min-width: 320px;
+      max-width: 640px;
+    }
+    
+    .group {
+      border: 1px solid lightgrey;
+      padding: 20px;
+      border-radius: 12px;
+    }
+    
+    h1 {
+      margin: 20px 0;
+    }
+    
+    input#jsonInput {
+      margin-bottom: 24px;
+    }
+    
+  </style>
 </head>
 <body>
   
-  <h1>Random Group Generator</h1>
-  
-  
+  <div class="container">
+    <h1>Random Group Generator</h1>
+    
+    
+  </div>
   
   <script>
     // features to add
@@ -21,6 +52,7 @@
     // 2. groupsize
     
     $(document).ready(function() {
+      
       // read in the JSON file. for final, should be uploadable
       $.getJSON("roster.json", function(data) {
         var semester = data[0].semester;
@@ -34,7 +66,9 @@
         // randomize the roster, and assign student to each group
         var groups = createGroups(groupCount, classStudents);
         console.log(groups);
-      });
+        
+      });   
+      
     });
     
     // create an array with necessary number of people for each group.
@@ -75,7 +109,7 @@
       return result;
     }
     
-    // ------ understand before using
+    // Durstenfeld shuffle (A computer-optimized version of Fisher-Yates)
     function shuffleArray(array) {
       for (var i = array.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
@@ -110,6 +144,7 @@
       }
       return result;
     }
+
   </script>
 </body>
 </html>
