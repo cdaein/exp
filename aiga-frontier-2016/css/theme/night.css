@@ -38,7 +38,8 @@ body {
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
-  color: #eee;
+  //color: #eee;
+  color: #ddd;
   font-family: "Montserrat", Impact, sans-serif;
   font-weight: normal;
   line-height: 1.2;
