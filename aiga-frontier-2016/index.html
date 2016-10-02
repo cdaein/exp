@@ -7,13 +7,16 @@
     <title>AIGA Frontier presentation</title>
 
     <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/night.css">
+    <link rel="stylesheet" href="css/theme/my-night.css">
 
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
 
     <style>
-      
+      .reveal .slides section img {
+        border: none;
+        background: none;
+      }
     </style>
 
     <!-- Printing and PDF exports -->
@@ -28,14 +31,16 @@
   <body>
     <div class="reveal">
       <div class="slides">
-        <!---------- INTRO ---------->
-        <section>
+        <section><!---------- INTRO ---------->
           <section>
             <h1>Type+Media</h1>
             <h3>
               A Typography Course Based On<br> Computer Programming
             </h3>
             <p><a href="http://exp.paperdove.com/aiga-frontier-2016">http://exp.paperdove.com/aiga-frontier-2016</a></p>
+            <aside class="notes">
+              ...
+            </aside>
           </section>
           <section>
             <h3>
@@ -46,31 +51,39 @@
             <h3>For graphic design students who have traditional design skills but have never coded before.</h3>
           </section>
           <section>
-            <h2>Two Consecutive Courses</h2>
-            <h3>Type+Media, 2015</h3>
-            <h3>DesignTech Workshop, 2016</h3>
+            <h2>Two Courses</h2>
+            <h3><a href="http://kmu-typemedia.paperdove.com" target="_blank">Type+Media</a>, 2015</h3>
+            <h3><a href="https://docs.google.com/document/d/14qczwegcO8RdcQA4WoMUG2z4KNyh2bE5fj0zNs2VcEU/edit" target="_blank">DesignTech Workshop</a>, 2016</h3>
           </section>
           <section>
            <h2>Type+Media Instuctors</h2>
-            <h3><a href="http://paperdove.com">Dae In Chung</a></h3>
+            <h3><a href="http://paperdove.com" target="_blank">Dae In Chung</a></h3>
             <p>Maryland Institute College of Art</p>
-            <h3><a href="http://typenadyou.com">Jiwon Lee</a></h3> 
+            <h3><a href="http://typenadyou.com" target="_blank">Jiwon Lee</a></h3> 
             <p>Kookmin University, South Korea</p>
           </section>
           <section>
            <h2>DesignTech Instuctors</h2>
-            <h3><a href="http://typenadyou.com">Jiwon Lee</a></h3> 
+            <h3><a href="http://typenadyou.com" target="_blank">Jiwon Lee</a></h3> 
             <p>Kookmin University, South Korea</p>
-            <h3><a href="http://">Daegwon Kim</a></h3>
-            <p>...</p>
+            <h3><a href="http://nacyot.com/" target="_blank">Daegwon Kim</a></h3>
+            <p>Software Engineer, Smartstudy</p>
+          </section>
+          <section>
+            <h2>What I will present today</h2>
+            <ul>
+              <li><h3>Hangul</h3></li>
+              <li><h3>Computational Typography</h3></li>
+              <li><h3>Courses</h3></li>
+              <li><h3>Student Work</h3></li>
+              <li><h3>Final Thoughts</h3></li>
+            </ul>
           </section>
         </section>
-
-        <!---------- HANGUL ---------->
-        <section>
+        <section><!---------- HANGUL ---------->
           <section>
             <h1>Hangul</h1>
-            <h2>Korean written language</h2>
+            <h3>Korean written language</h3>
           </section>
           <section>
             <h3>
@@ -83,29 +96,43 @@
             <h2>Consonants</h2>
           </section>
           <section>
-            <h2>ㄱ ㄴ ㅁ ㅅ ㅇ</h2>
+            <h2>Five Basic Consonants</h2>
+            <img src="images/hangul/five-consonants.png">
+          </section>
+          <section data-background-image="images/hangul/giyuk.png">
+          </section>
+          <section data-background-image="images/hangul/niun.png">
+          </section>
+          <section data-background-image="images/hangul/mium.png">
+          </section>
+          <section data-background-image="images/hangul/siot.png">
+          </section>
+          <section data-background-image="images/hangul/ieng.png">
           </section>
           <section>
-            <h2>ㄱ</h2>
-            <img src="images/speech-organs.png">
+            
           </section>
-          <section>
-            <h2>ㄴ</h2>
-            <img src="images/speech-organs.png">
-          </section> 
           <!-- syllable -->
           <section>
             <h2>Syllable</h2>
           </section>
           <section>
-            
+            <h2>Modular Design</h2>
           </section>
           <section>
-            <h2>Maluka vs. Wakete</h2>
+            <h2>Maluma and Takete</h2>
+            <img src="images/maluma-takete.jpg">
+          </section>
+          <section>
+            <img src="images/hangul-examples/semi.jpg">
+            <p><small>Chul Hee Park / 박철희</small></p>
+          </section>
+          <section>
+            <img src="images/hangul-examples/blessing.jpg">
+            <p><small>Jae Joon Han / 한재준</small></p>
           </section>
         </section>
-        <!---------- COMPUTATIONAL TYPOGRAPHY ---------->
-        <section>
+        <section><!---------- COMPUTATIONAL TYPOGRAPHY ---------->
           <section>
             <h1>Computational Typography</h1>
           </section>
@@ -117,64 +144,127 @@
             <h3 class="fragment">emotion</h3>
           </section>
           <section>
+            <h2>Form+Code</h2>
+            <h3><small>by Casey Reas and Chandler McWilliams</small></h3>
+            <img src="images/formcode-cover.jpg">
+          </section>
+          <section>
+            <ul>
+              <li><h3 class="fragment">Repeat</h3></li>
+              <li><h3 class="fragment">Transform</h3></li>
+              <li><h3 class="fragment">Parameterize</h3></li>
+              <li><h3 class="fragment">Visualize</h3></li>
+              <li><h3 class="fragment">Simulate</h3></li>
+            </ul>
+          </section>
+          <section>
             <h2>iOS 10 Messages</h2>
             <video data-autoplay loop muted>
               <source data-src="media/ios10-messages.m4v" />
             </video>
           </section>
         </section>
-        <!---------- COURSES ---------->
-        <section>
-          <h3>First, learn the fundamentals of programming, then, work on individual projects.</h3>
-        </section>
-        <!---------- STUDENT WORK ---------->
-        <section>
+        <section><!---------- COURSES ---------->
           <section>
-            <video data-autoplay loop muted>
+            <h1>Courses</h1>
+            <h3>Process, Result and Reflection</h3>
+          </section>
+          <section>
+            <h2>Audience</h2>
+            <ul>
+              <li>Type+Media: Jr. graphic design majors as part of the regular curriculum.</li>
+              <li>DesignTech Workshop: working professionals and students from various backgrounds.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Objectives</h2>
+            <ul>
+              <li></li>
+            </ul>
+          </section>
+          <section>
+            <h2>Tools</h2>
+            <ul>
+              <li><a href="http://processing.org" target="_blank">Processing</a> already has large user base and learning resources</li>
+              <li><a href="http://p5js.org" target="_blank">p5.js</a> is very similar to Processing. It works on the web.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Course Topics</h2>
+            <ul>
+              <li><a href="https://conditionaldesign.org/" target="_blank">Conditional Design</a></li>
+              <li>Variables</li>
+              <li>Functions</li>
+              <li>Individual Projects</li>
+            </ul>
+          </section>
+          <section data-background-image="images/courses/conditional1.jpg">
+            <h3>Conditional Design</h3>
+          </section>
+          <section data-background-image="images/courses/conditional2.jpg">
+            <h3>Conditional Design</h3>
+          </section>
+        </section>
+        <section><!---------- STUDENT WORK ---------->
+          <section>
+            <h1>Student Work</h1>
+          </section>
+          <section>
+            <video style="width: 80%;" data-autoplay loop muted>
               <source data-src="media/w-kimyujin.mov">
             </video>
-            <small>Yu Jin Kim</small>
+            <p><small>Yu Jin Kim / 김유진</small></p>
           </section>
           <section>
-            <video data-autoplay loop muted>
+            <video style="width: 80%;" data-autoplay loop muted>
               <source data-src="media/w-limcheoljun.mov">
             </video>
-            <small>Cheol Jun Lim</small>
+            <p><small>Cheol Jun Lim / 임철준</small></p>
           </section>
           <section>
-            <video data-autoplay loop muted>
+            <video style="width: 80%;" data-autoplay loop muted>
               <source data-src="media/w-parkseyeon.mov">
             </video>
-            <small>Se Yeon Park</small>
+            <p><small>Se Yeon Park / 박세연</small></p>
           </section>
           <section>
-            <video data-autoplay loop muted>
+            <video style="width: 80%;" data-autoplay loop muted>
               <source data-src="media/w-sohnhyolim.mov">
             </video>
-            <small>Hyolim Sohn</small>
+            <p><small>Hyolim Sohn / 손효림</small></p>
           </section>
           <section>
-            <video data-autoplay loop muted>
+            <video style="width: 80%;" data-autoplay loop muted>
               <source data-src="media/w-hwangsunah.mov">
             </video>
-            <small>SunAh Hwang</small>
+            <p><small>SunAh Hwang / 황선아</small></p>
           </section>
           <section>
-            <video data-autoplay loop muted>
+            <video style="width: 80%;" data-autoplay loop muted>
               <source data-src="media/w-leesaebom.mov">
             </video>
-            <small>Saebom Lee</small>
+            <p><small>Saebom Lee / 이새봄</small></p>
           </section>
           <section>
-            <video data-autoplay loop muted>
+            <video style="width: 80%;" data-autoplay loop muted>
               <source data-src="media/w-jungshinjae.mov">
             </video>
-            <small>Shinjae Jung</small>
+            <p><small>Shinjae Jung / 정신재</small></p>
           </section>
         </section>
-        <!---------- FINAL THOUGHTS ---------->
-        <section>
-
+        <section><!---------- FINAL THOUGHTS ---------->
+          <section>
+            <h2>Do designers have to code?</h2>
+          </section>
+          <section>
+            <h2>What machines can do and what designers can do</h2>
+          </section>
+          <section>
+            <h3>Netflix thumbnail generator</h3>
+          </section>
+          <section>
+            <h2>Limitations</h2>
+          </section>
         </section>
       </div><!-- slides -->
     </div><!-- reveal -->
@@ -187,7 +277,7 @@
         Reveal.initialize({
             controls: true,
             history: true,
-            //transition: 'none',
+            transition: 'none', // none/fade/slide/convex/concave/zoom
 
             // More info https://github.com/hakimel/reveal.js#dependencies
             dependencies: [
