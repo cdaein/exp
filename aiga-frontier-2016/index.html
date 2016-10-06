@@ -20,7 +20,14 @@
       .reveal .slides section a {
         border-bottom: 3px dotted grey;
       }
-      
+      .reveal .slides section h2,
+      .reveal .slides section h3,
+      .reveal .slides section h4,
+      .reveal .slides section p,
+      .reveal .slides section li {
+        line-height: 1.7em;
+      }
+
     </style>
 
     <!-- Printing and PDF exports -->
@@ -52,53 +59,41 @@
             </h3>
           </section>
           <section>
-            <h3>For graphic design students who have traditional design skills but have never coded before.</h3>
-          </section>
-          <section>
             <h2>Two Courses</h2>
-            <h3><a href="http://kmu-typemedia.paperdove.com" target="_blank">Type+Media</a>, 2015</h3>
-            <h3><a href="https://docs.google.com/document/d/14qczwegcO8RdcQA4WoMUG2z4KNyh2bE5fj0zNs2VcEU/edit" target="_blank">DesignTech Workshop</a>, 2016</h3>
+            <p><a href="http://kmu-typemedia.paperdove.com" target="_blank">Type+Media</a>, 2015</p>
+            <p><a href="https://docs.google.com/document/d/14qczwegcO8RdcQA4WoMUG2z4KNyh2bE5fj0zNs2VcEU/edit" target="_blank">DesignTech Workshop</a>, 2016</p>
           </section>
           <section>
-           <h2>Type+Media Instuctors</h2>
-            <h3><a href="http://paperdove.com" target="_blank">Dae In Chung</a></h3>
-            <p>Maryland Institute College of Art</p>
-            <h3><a href="http://typenadyou.com" target="_blank">Jiwon Lee</a></h3> 
-            <p>Kookmin University, South Korea</p>
-          </section>
-          <section>
-           <h2>DesignTech Instuctors</h2>
-            <h3><a href="http://typenadyou.com" target="_blank">Jiwon Lee</a></h3> 
-            <p>Kookmin University, South Korea</p>
-            <h3><a href="http://nacyot.com/" target="_blank">Daegwon Kim</a></h3>
-            <p>Software Engineer, Smartstudy</p>
+            <h2>Instuctors</h2>
+            <p><a href="http://paperdove.com" target="_blank">Dae In Chung</a>, Maryland Institute College of Art</p>
+            <p><a href="http://typenadyou.com" target="_blank">Jiwon Lee</a>, Kookmin University, Korea</p> 
+            <p><a href="http://nacyot.com/" target="_blank">Daegwon Kim</a>, Software Engineer, Smartstudy, Korea</p>
           </section>
           <section>
             <h2>What I will present today</h2>
             <ul>
-              <li><h3>Hangul</h3></li>
-              <li><h3>Computational Typography</h3></li>
-              <li><h3>Courses</h3></li>
-              <li><h3>Student Work</h3></li>
-              <li><h3>Final Thoughts</h3></li>
+              <li>Hangul</li>
+              <li>Computational Typography</li>
+              <li>Courses</li>
+              <li>Student Work</li>
+              <li>Final Thoughts</li>
             </ul>
           </section>
         </section>
         <section><!---------- HANGUL ---------->
           <section>
-            <h1>Hangul</h1>
-            <h3>Korean written language</h3>
+            <h2>Hangul</h2>
+            <h4>Korean written language</h4>
           </section>
           <section>
-            <h3>
-              Hangul was invented<br>
-              by King Sejong in 1443.
-            </h3>
+            <p>
+              Hangul was invented by King Sejong in 1443.
+            </p>
             <img src="images/hangul/hunmin.jpg">
           </section>
           <!-- consonants -->
           <section>
-            <h3>Five basic consonants are designed<br> after speech organs</h3>
+            <p>Five basic consonants are designed after speech organs</p>
             <img src="images/hangul/five-consonants.png">
             <aside class="notes">
               'ieung' is silent at the initial position. It's mostly used with vowels that follow.
@@ -146,15 +141,15 @@
             </aside>
           </section>
           <section>
-           <h3>Add strokes based on <br>the strength of the sound</h3>
+            <p>Add strokes based on the strength of the sound</p>
             <img src="images/hangul/other-consonants1.png">
           </section>
           <section>
-            <h3>Add strokes based on <br>the strength of the sound</h3>
+            <p>Add strokes based on the strength of the sound</p>
             <img src="images/hangul/other-consonants2.png">
           </section>
           <section>
-            <h2>Maluma and Takete</h2>
+            <p>Maluma and Takete</p>
             <img src="images/maluma-takete.jpg">
             <p><small>Wolfgang Köhler</small></p>
             <aside class="notes">
@@ -164,7 +159,7 @@
           <!-- syllable -->
           <section>
             <h2>Syllable</h2>
-            <h3>Modular Design</h3>
+            <h4>Modular Design</h4>
             <aside class="notes">
               Hangul provides an interesting starting point in its modular design.
               With the basic units of consonants and vowels, we can create syllables.
@@ -183,16 +178,13 @@
             <img src="images/hangul/bal.png">
           </section>
           <section data-background-image="images/hangul/all-letters.gif">
+            <h3>10,000+</h3>
             <aside class="notes">
               There are more than 10,000 combinations we can create, but many of them are not used.
             </aside>
           </section>
           <section>
-            <img src="images/hangul-examples/semi.jpg">
-            <p><small>Chul Hee Park / 박철희</small></p>
-            <aside class="notes">
-              
-            </aside>
+            <img src="images/hangul-examples/modular-design.jpg">
           </section>
           <section>
             <img src="images/hangul-examples/blessing.jpg">
@@ -201,22 +193,22 @@
               The message here is 'blessing.' We do not have these consonants where there are 3 repetitions but they are used to strengthen the sound/message.
             </aside>
           </section>
-          <section>
-            <img src="images/hangul-examples/modular-design.jpg">
-          </section>
         </section>
         <section><!---------- COMPUTATIONAL TYPOGRAPHY ---------->
           <section>
-            <h1>Computational Typography</h1>
+            <h2>Computational Typography</h2>
             <aside class="notes">
               Comp.Typography can build upon the traditional typography using the power of the computation.
               Also, in digital media, animation and interaction is given, and they create new opportunities for communication and expressions.
+              
+              Computer has been used to design type
             </aside>
           </section>
+<!--
           <section>
             <h2>Form+Code</h2>
             <h3><small>by Casey Reas and Chandler McWilliams</small></h3>
-            <img style="float:left;" src="images/formcode-cover.jpg">
+            <img style="float:left;" src="images/compute-type/formcode-cover.jpg">
             <ul>
               <li><h3 class="">Repeat</h3></li>
               <li><h3 class="">Transform</h3></li>
@@ -226,70 +218,100 @@
             </ul>
             <aside class="notes">
               The book, Form+Code, describes five characteristics of making forms using code.
+              1. just by being able to repeat, it opens the door to new kinds of expressions.
+              2. 
             </aside>
           </section>
+-->
           <section>
-            <h2>Mapping data to letterform</h2>
-            <h3 class="fragment">distance</h3>
-            <h3 class="fragment">temperature</h3>
-            <h3 class="fragment">nuance</h3>
-            <h3 class="fragment">emotion</h3>
+            <h4>Mapping data to letterform</h4>
+            <p class="fragment">distance</p>
+            <p class="fragment">temperature</p>
+            <p class="fragment">nuance</p>
+            <p class="fragment">emotion</p>
             <aside class="notes">
               Instead of having a fixed form, it can respond to different conditions and conveying different nuances.
             </aside>
           </section>
           <section>
-            <h2>iOS 10 Messages</h2>
+            <h4>iOS 10 Messages</h4>
             <video data-autoplay loop muted>
               <source data-src="media/ios10-messages.m4v" />
             </video>
           </section>
           <section>
-            <h2>Adobe Max Project Faces</h2>
+            <h4>Adobe Max Project Faces</h4>
             <iframe width="853" height="480" src="https://www.youtube.com/embed/bcUo9ULvVq4?rel=0" frameborder="0" allowfullscreen></iframe>
             <aside class="notes">(From 1:30) This is not an entirely new idea. Metafont, LAIKA, even Adobe had something similar back in the days.</aside>
           </section>
           <section>
-            <h2>LAIKA Font</h2>
-            <img src="images/laika-font.png">
+            <h4>LAIKA Font</h4>
+            <img src="images/compute-type/laika-font.png">
             <p><small><a href="http://www.laikafont.ch/" target="_blank">http://www.laikafont.ch/</a></small></p>
           </section>
           <section>
-            <h2>Metafont</h2>
-            <img src="images/metafont.jpg">
-            <p><small>Donald Knuth</small></p>
+            <img style="width: 60%;" src="images/compute-type/metafont2.png">
+            <p><small>Metafont by Donald Knuth (image from <a href="http://printingcode.runemadsen.com/lecture-typography/" target="_blank">Printing Code</a>)</small></p>
+            <aside class="notes">
+              Metafont describes the skeleton and the thickness instead of outlines.
+            </aside>
+          </section>
+          <section>
+            <img style="width: 60%;" src="images/compute-type/thesis-jiwon.jpg">
+            <p><small>User Aspect Design by Jiwon Lee</small></p>
+            <aside class="notes">
+              My co-researcher Jiwon did a thesis on this.
+            </aside>
+          </section>
+          <section>
+            <ul>
+              <li>Stops: p, b, t, d, k, g, c, q, x - 5 points</li>
+              <li>Fricatives: f, v, s, z, h, c, x - 4 points</li>
+              <li>Affricates / Nasals / Lateral: j, m, n, l - 3 points</li>
+              <li>Approximant: w, r, y - 2 points</li>
+              <li>Vowels: a, e, i, o, u - 1 point</li>
+              <li>word score = total score / number of letters</li>
+            </ul>
+          </section>
+          <section>
+            <p>
+              Meta-design is much more difficult than design;<br>
+              it’s easier to draw something than to explain how to draw it.<br>
+              &mdash; Donald Knuth, The Metafont Book</p>
           </section>
         </section>
         <section><!---------- COURSES ---------->
           <section>
-            <h1>Courses</h1>
-            <h3>Process, Result and Reflection</h3>
+            <h2>Courses</h2>
+            <h4>Process, Result and Reflection</h4>
           </section>
           <section>
             <h2>Objectives</h2>
             <ul>
-              <li><h3>Fundamentals of programming</h3></li>
-              <li><h3>Systematic way of working</h3></li>
-              <li><h3>Type that responds to conditions</h3></li>
+              <li>Fundamentals of programming</li>
+              <li>Systematic way of working</li>
+              <li>Type that responds to conditions</li>
             </ul>
             <aside class="notes">
               For both classes, we had to start from scratch.
             </aside>
           </section>
           <section>
-            <h2>Tools</h2>
-            <h3><a href="http://processing.org" target="_blank">Processing</a> has a large user base <br>and learning resources</h3>
-            <h3><a href="http://p5js.org" target="_blank">p5.js</a> is similar to Processing. <br>It works on the web.</h3>
+            <h3>Tools</h3>
+            <p><a href="http://processing.org" target="_blank">Processing</a> has a large user base <br>and learning resources</p>
+            <p><a href="http://p5js.org" target="_blank">p5.js</a> is similar to Processing. <br>It works on the web.</p>
             <aside class="notes">
               Having outside resources for self-learning was very important. Tools must be designed for artists/designers. We moved from Processing to p5.js because it would work on the browser without any set up. More devices. Wider audience. 
             </aside>
           </section>
           <section>
-            <h2>Course Topics</h2>
-              <h3><a href="https://conditionaldesign.org/" target="_blank">Conditional Design</a></h3>
-              <h3>Drawing with Code</h3>
-              <h3>Variables & Functions</h3>
-              <h3>Individual Projects</h3>
+            <h3>Course Topics Overview</h3>
+            <ul>
+              <li><a href="https://conditionaldesign.org/" target="_blank">Conditional Design</a></li>
+              <li>Drawing with Code</li>
+              <li>Variables & Functions</li>
+              <li>Individual Projects</li>
+            </ul>
           </section>
           <section>
             <h3>Conditional Design</h3>
@@ -309,7 +331,7 @@
         </section>
         <section><!---------- STUDENT WORK ---------->
           <section>
-            <h1>Student Work</h1>
+            <h2>Student Work</h2>
           </section>
           <section>
             <video style="width: 80%;" data-autoplay loop muted>
@@ -393,34 +415,50 @@
         </section>
         <section><!---------- FINAL THOUGHTS ---------->
           <section>
-            <h2>Things We Learned</h2>
+            <h3>Things We Learned</h3>
             <ul>
-              <li><h3>Designer's perspective</h3></li>
-              <li><h3>Team teaching</h3></li>
-              <li><h3>Design Process</h3></li>
-              <li><h3>Expand to other areas</h3></li>
-              <li><h3>The role of a designer</h3></li>
+              <li>Designer's perspective</li>
+              <li>Team teaching</li>
+              <li>Design Process</li>
+              <li>Communication</li>
+              <li>The role of a designer</li>
             </ul>
+            <aside class="notes">
+              1. Teach from designer's perspective.
+              2. Teach with people from different backgrounds.
+              3. Learn the process, not just the techniques.
+              4. Responding to the new needs. Suggesting new ideas for communication.
+              5. Rethink about the role of a designer
+            </aside>
           </section>
           <section>
-            <h2>Do designers have to code?</h2>
+            <h3>Do designers have to code?</h3>
           </section>
           <section>
-            <h4>All artists and designers in the 21st century should have experience programming their own software… If the person is unable to shape the tool they are shaped and moulded by another person’s idea of what the software is and what software can be.” &mdash; Casey Reas</h4> 
+            <p>All artists and designers in the 21st century should have experience programming their own software… If the person is unable to shape the tool they are shaped and moulded by another person’s idea of what the software is and what software can be.” &mdash; Casey Reas</p> 
           </section>
           <section>
-            <h2>What machines can do and what designers can do</h2>
+            <img src="images/final/paperjs.png">
+            <p><a href="http://paperjs.org/examples/hit-testing/" target="_blank">Paper.js</a> by Jürg Lehni</p>
+            <aside class="notes">
+              Designers making tools for designers.
+            </aside>
           </section>
           <section>
-            <h2>Examples</h2>
-            <img style="width: 50%;" src="images/final/netflix-face.gif">
-            <p><small><a href="http://techblog.netflix.com/2016/03/extracting-image-metadata-at-scale.html" target="_blank">Netflix thumbnail generating algorithm</a></small></p>
+            <h3>What machines can do and what designers can do</h3>
           </section>
           <section>
-            <h2>Designers making tools for designers</h2>
-            <h3>Jürg Lehni</h3> 
-            <p><a href="https://scriptographer.org/" target="_blank">Scriptographer</a> and <a href="http://paperjs.org/examples/hit-testing/" target="_blank">Paper.js</a></p>
-            <h3>anybody else?</h3>
+            <img style="width: 60%;" src="images/final/netflix-face.gif">
+            <p><a href="http://techblog.netflix.com/2016/03/extracting-image-metadata-at-scale.html" target="_blank">Netflix thumbnail generating algorithm</a></p>
+          </section>
+          <section>
+            AI example
+          </section>
+          <section>
+            <h3>Our work is never finished...</h3>
+            <aside class="notes">
+              In digital media, there is no end to a project. The paint never dries. Process is result. Build the system, not a single outcome.
+            </aside>
           </section>
         </section>
         <section>
