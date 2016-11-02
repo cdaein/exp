@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/paper-full.js"></script>
+  <style>
+    html,
+    body {
+      margin: 0;
+      overflow: hidden;
+      height: 100%;
+      font-family: Helvetica, Arial, sans-serif;
+    }
+    /* Scale canvas with resize attribute to full size */
+    canvas[resize] {
+      width: 100%;
+      height: 100%;
+    }
+    body {
+      background-color: lightblue;
+    }
+    h1 {
+      font-size: 32px;
+      padding-left: 50px;
+    }
+  </style>
+  <script>
+    /********** grouping algorithm **********/
+    var names = ['Adam', 'Britney', 'Charlie', 'David', 'Elon', 'Fiona', 'George', 'Hanna'];
+    var groups = [];
+    var bundle = 3;
+
+    function makeGroups(names) {
+      var shuffled = shuffle(names);
+      var group = [];
+      let count = 0;
+      for (var i = 0; i < shuffled.length; i++) {    
+        group.push(shuffled[i]);
+        count++;
+        if (count >= bundle || i === shuffled.length - 1) {
+          count = 0;
+          groups.push(group);
+          group = [];
+        }
+      }
+      console.log(groups);
+    }
+    
+    function shuffle(array) {
+      let counter = array.length;
+
+      // While there are elements in the array
+      while (counter > 0) {
+        // Pick a random index
+        let index = Math.floor(Math.random() * counter);
+        // Decrease counter by 1
+        counter--;
+        // And swap the last element with it
+        let temp = array[counter];
+        array[counter] = array[index];
+        array[index] = temp;
+      }
+      return array;
+    }
+
+    /********** paper.js codes **********/
+    function displayGroups() {
+      var nameLayer = new Layer();
+      var tsize = 32;
+
+      let x = 50;
+      let y = 50;
+      for (var i = 0; i < groups.length; i++) {
+        for (var j = 0; j < groups[i].length; j++) {
+          var text = new PointText({
+            point: [x, y],
+            justification: 'left',
+            content: groups[i][j],
+            fillColor: 'black',
+            fontFamily: 'Helvetica',
+            fontWeight: 'bold',
+            fontSize: tsize
+          });
+          y += tsize;
+        }
+        x += 180;
+        if (y > view.viewSize.height - 100) {
+          y = 50;
+        }
+      }
+
+      var children = project.activeLayer.children;
+      for (var i = 0; i < children.length; i++) {
+        var child = children[i];
+        child.onMouseDown = function(event) {
+          this.selected = true;
+        };
+        child.onMouseDrag = function(event) {
+          this.position = this.position.add(event.delta);
+        };
+        child.onMouseUp = function(event) {
+          this.selected = false;
+        };
+        child.onMouseEnter = function(event) {
+        };
+        child.onMouseLeave = function(event) {
+        };
+      }
+    }
+    
+    /********** main **********/
+    paper.install(window);
+    window.onload = function() {
+      
+      // read in the JSON file. for final, should be uploadable
+      $.getJSON("data/roster.json", function(data) {
+        var semester = data[0].semester;
+        var classes = data[0].classes;
+        var myClass = classes[0]; // for testing
+        var className = myClass.title;
+        var classDay = myClass.day;
+        var classStudents = myClass.students;
+        var groupCount = getGroupCount(classStudents.length, 4); 
+        console.log(groupCount); // how many groups?
+        // randomize the roster, and assign student to each group
+        var groups = createGroups(groupCount, classStudents);
+        console.log(groups);
+        
+      });
+      
+      paper.setup('canvas')
+      makeGroups(names);
+      displayGroups();
+
+      view.onframe = function(event) {
+        //console.log(event);
+      };
+    }
+
+  </script>
+</head>
+<body>
+  <h1>Random Group Generator</h1>
+  <canvas id="canvas" resize></canvas>
+</body>
+</html>
