@@ -54,7 +54,7 @@
     $(document).ready(function() {
       
       // read in the JSON file. for final, should be uploadable
-      $.getJSON("roster.json", function(data) {
+      $.getJSON("data/roster.json", function(data) {
         var semester = data[0].semester;
         var classes = data[0].classes;
         var myClass = classes[0]; // for testing
