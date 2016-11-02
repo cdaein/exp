@@ -30,7 +30,71 @@
     var names = ['Adam', 'Britney', 'Charlie', 'David', 'Elon', 'Fiona', 'George', 'Hanna'];
     var groups = [];
     var bundle = 3;
+    
+    // create an array with necessary number of people for each group.
+    function getGroupCount(total, groupsize) {
+      var waiting = total;
+      var numG1 = -1;
+      var numG2 = -1;
+      
+      // error checking
+      if (total <= 0 || groupsize < 2 || total < groupsize) {
+        console.log("numbers don't match...");
+        return;
+      }
+      
+      numG1 = Math.floor( waiting / groupsize ); // set numG1 to max value
+      while (waiting > 0) { // until everyone gets assigned
+        waiting = total - (numG1 * groupsize); // first, assign every possible person
+        if (waiting % (groupsize - 1) == 0) { // in perfect case scenario
+          numG2 = waiting / (groupsize - 1);
+          waiting = 0; // everyone is happy
+        } else { // Nah...simple math didn't work, let's reduce number of first group
+          numG1--; // one by one until there's no remainder.
+          if (numG1 <= 0) { // in case this is not possible
+            console.log("can't complete...");
+            return;
+          }
+        }  
+      }
+      
+      var result = [];
+      for (var i = 0; i < numG1; i++) {
+        result.push( groupsize );
+      }
+      for (var i = 0; i < numG2; i++) {
+        result.push( groupsize - 1 );
+      }
+      
+      return result;
+    }
 
+    // create array(result) of array(template) with names of people
+    function createGroups(template, names) {
+      // 1. randomize names array
+      // 2. assign one by one into each group
+      // 3. return the result
+      
+      names = shuffle(names);
+      
+      var count = 0;
+      var result = [];
+      for (var i = 0; i < template.length; i++) {
+        var group = [];
+        for (var j = 0; j < template[i]; j++) {
+          group.push(names[count]);
+          count++;
+          if (count > names.length) {
+            console.log("lengths don't match...");
+            break;
+          }
+        }
+        result.push(group);
+      }
+      return result;
+    }
+    
+    // another version of making groups
     function makeGroups(names) {
       var shuffled = shuffle(names);
       var group = [];
@@ -44,9 +108,10 @@
           group = [];
         }
       }
-      console.log(groups);
+      //console.log(groups);
     }
     
+    // shuffle an array; found on stackoverflow
     function shuffle(array) {
       let counter = array.length;
 
@@ -76,7 +141,7 @@
           var text = new PointText({
             point: [x, y],
             justification: 'left',
-            content: groups[i][j],
+            content: groups[i][j].fullname,
             fillColor: 'black',
             fontFamily: 'Helvetica',
             fontWeight: 'bold',
@@ -122,20 +187,13 @@
         var classDay = myClass.day;
         var classStudents = myClass.students;
         var groupCount = getGroupCount(classStudents.length, 4); 
-        console.log(groupCount); // how many groups?
+        //console.log(groupCount); // how many groups?
         // randomize the roster, and assign student to each group
-        var groups = createGroups(groupCount, classStudents);
-        console.log(groups);
+        groups = createGroups(groupCount, classStudents);
         
+        paper.setup('canvas')
+        displayGroups();
       });
-      
-      paper.setup('canvas')
-      makeGroups(names);
-      displayGroups();
-
-      view.onframe = function(event) {
-        //console.log(event);
-      };
     }
 
   </script>
