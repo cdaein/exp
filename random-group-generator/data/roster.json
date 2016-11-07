@@ -7,46 +7,25 @@
         "day": "Wednesday",
         "students": [ 
           {
-              "fullname": "Aaron A"
+              "fullname": "Jihae"
           }, 
           {
-              "fullname": "Brad B"
+              "fullname": "Hyojeong"
           },
           {
-              "fullname": "Charlie C"
+              "fullname": "Drew"
           },
           {
-              "fullname": "David D"
+              "fullname": "Mikea"
           },
           {
-              "fullname": "Ernie E"
+              "fullname": "Terrence"
           },
           {
-              "fullname": "Frank F"
+              "fullname": "David"
           },
           {
-              "fullname": "Graham G"
-          },
-          {
-              "fullname": "Hannah H"
-          },
-          {
-              "fullname": "Irene I"
-          },
-          {
-            "fullname": "Jack J"
-          },
-          {
-            "fullname": "Kevin K"
-          },
-          {
-            "fullname": "Lebron L"
-          },
-          {
-            "fullname": "Michael M"
-          },
-          {
-            "fullname": "Nate N"
+              "fullname": "Jeff"
           }
         ]
       },
@@ -55,25 +34,52 @@
         "day": "Monday",
         "students": [
           {
-              "fullname": "고고"
+              "fullname": "Eleni"
           },
           {
-              "fullname": "노노"
+              "fullname": "Mazzy"
           },
           {
-              "fullname": "도도"
+              "fullname": "Brandon"
           },
           {
-              "fullname": "로로"
+              "fullname": "Lee"
           },
           {
-              "fullname": "모모"
+              "fullname": "Hannamae"
           },
           {
-              "fullname": "보보"
+              "fullname": "Talia"
           },
           {
-              "fullname": "소소"
+              "fullname": "Daniel"
+          },
+          {
+              "fullname": "Cassandra"
+          },
+          {
+              "fullname": "Chris"
+          },
+          {
+              "fullname": "Clifford"
+          },
+          {
+              "fullname": "Chase"
+          },
+          {
+              "fullname": "Charlotte"
+          },
+          {
+              "fullname": "Aage"
+          },
+          {
+              "fullname": "John"
+          },
+          {
+              "fullname": "Maggie"
+          },
+          {
+              "fullname": "Cheng"
           }
         ]
       },
@@ -82,25 +88,49 @@
         "day": "Tuesday",
         "students": [
           {
-            "fullname": "a"
+            "fullname": "Nicole"
           },
           {
-            "fullname": "b"
+            "fullname": "Isabella B."
           },
           {
-            "fullname": "c"
+            "fullname": "Aine"
           },
           {
-            "fullname": "d"
+            "fullname": "Reyna"
           },
           {
-            "fullname": "e"
+            "fullname": "Aaron C."
           },
           {
-            "fullname": "f"
+            "fullname": "Jeena"
           },
           {
-            "fullname": "g"
+            "fullname": "Sue"
+          },
+          {
+            "fullname": "Sienna"
+          },
+          {
+            "fullname": "Isabella"
+          },
+          {
+            "fullname": "Lisa"
+          },
+          {
+            "fullname": "DeAndre"
+          },
+          {
+            "fullname": "Jamie"
+          },
+          {
+            "fullname": "Aaron S."
+          },
+          {
+            "fullname": "Nikolas"
+          },
+          {
+            "fullname": "Katie"
           }
         ]
       }
