@@ -163,8 +163,8 @@
           });
           y += tsize;
         }
-        x += 180;
-        if (y > view.viewSize.height - 100) {
+        x += 200;
+        if (y > view.viewSize.height - 200) {
           y = 50;
         }
       }
@@ -194,9 +194,10 @@
       
       // read in the JSON file. for final, should be uploadable
       $.getJSON("data/roster.json", function(data) {
+        var index = 1;
         var semester = data[0].semester;
         var classes = data[0].classes;
-        var myClass = classes[0]; // for testing
+        var myClass = classes[index]; // for testing
         var className = myClass.title;
         var classDay = myClass.day;
         var classStudents = myClass.students;
@@ -215,7 +216,11 @@
 <body>
   <section>
     <h1>Random Group Generator</h1>
-    <input id="upload" type="file" />
+    <form>
+      <input type="radio" name="class" value="GD2 Wed" checked> GD2 Wed<br>
+      <input type="radio" name="class" value="GD3 Mon"> GD3 Mon<br>
+      <input type="radio" name="class" value="GD3 Tue"> GD3 Tue
+    </form>
   </section>
   <canvas id="canvas" resize></canvas>
 </body>
