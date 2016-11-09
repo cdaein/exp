@@ -14,7 +14,7 @@
       font-family: Helvetica, Arial, sans-serif;
     }
     body {
-      background-color: lightblue;
+      background-color: lightpink;
     }
     /* Scale canvas with resize attribute to full size */
     canvas[resize] {
@@ -163,7 +163,7 @@
           });
           y += tsize;
         }
-        x += 200;
+        x += 150;
         if (y > view.viewSize.height - 200) {
           y = 50;
         }
@@ -194,7 +194,7 @@
       
       // read in the JSON file. for final, should be uploadable
       $.getJSON("data/roster.json", function(data) {
-        var index = 1;
+        var index = 2;
         var semester = data[0].semester;
         var classes = data[0].classes;
         var myClass = classes[index]; // for testing
