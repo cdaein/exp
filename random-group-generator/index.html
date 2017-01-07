@@ -194,14 +194,14 @@
       
       // read in the JSON file. for final, should be uploadable
       $.getJSON("data/roster.json", function(data) {
-        var index = 2;
+        var index = 0;
         var semester = data[0].semester;
         var classes = data[0].classes;
         var myClass = classes[index]; // for testing
         var className = myClass.title;
         var classDay = myClass.day;
         var classStudents = myClass.students;
-        var groupCount = getGroupCount(classStudents.length, 4); 
+        var groupCount = getGroupCount(classStudents.length, 2); 
         //console.log(groupCount); // how many groups?
         // randomize the roster, and assign student to each group
         groups = createGroups(groupCount, classStudents);
