@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>MICA basil.js demo day</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/beige.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<style>
+          
+          em.name {
+            //text-decoration: underline;
+            background-color: #ddd;
+          }
+          code {
+            background-color: white;
+            box-shadow: 3px 3px 10px grey;
+          }
+          
+        </style>
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section><!---------- TITLE ---------->
+					<h1>Machine Learning and Graphic Design</h1>
+					<p>
+						<small><a href="http://exp.paperdove.com/mica-ml-demo">http://exp.paperdove.com/mica-ml-demo</a></small><br>
+					</p>
+				</section><!---------- TITLE END ---------->
+				<section><!---------- INTRO ---------->
+					<section>
+					  <h2>Why scripting?</h2>
+					  <ul>
+					    <li>Automate repetitive tasks.</li>
+					    <li>Control layouts using algorithms.</li>
+					    <li>Use external data as sources.</li>
+					    <li>Connect to the web.</li>
+					  </ul>
+					</section>
+					<section>
+						<h2>InDesign Scripting</h2>
+						<img src="images/indesign-scripting-1.png">
+					</section>
+					<section>    
+				      <h2>Basil.js</h2>
+				      <ul>
+				        <li>Makes scripting (relatively) easier.</li>
+				        <li>Similar to how Processing works.</li>
+				      </ul>
+					</section>
+					<section>
+					  <h2>Compared to Processing</h2>
+					  <ul>
+              <li>Java(Processing) vs. JavaScript(basil.js)</li>
+					    <li>Move and edit items after running the script</li>
+					    <li>Manage the layers.</li>
+					    <li>Save as a regular InDesign file.</li>
+					    <li>Undo.</li>
+					    <li>Cannot draw on the pixel level.</li>
+					    <li>No interactivity.</li>
+					  </ul>
+					</section>
+				</section><!---------- INTRO END ---------->
+				<section><!---------- INSTALLATION ---------->
+				  <section>
+				    <h2>Installation</h2> 
+				    <p>
+				      This installation can be a little tricky if you have never used the Terminal app before. <a href="http://basiljs.ch/tutorials/installation-and-getting-started/" target="_blank">The installation guide</a> is available.
+				    </p>
+				  </section>
+				  <section>
+				    <p>
+				      Download the latest package from <a href="http://basiljs.ch/download/" target="_blank">here</a>.
+				    </p>
+				  </section>
+				  <section>
+                    <p>
+  				      Unzip the file and change the folder name to <em class="name">basiljs</em>.
+  				    </p>
+				  </section>
+				  <section>
+				    <p>
+				      Move the entire folder into your <em class="name">Documents</em> folder.
+				    </p>
+				    <p>
+				      ex. <em class="name">USERNAME > Documents > basiljs > bundle</em>
+				    </p>
+				  </section>
+				  <section>
+				    <p>
+				      Inside the <em class="name">basiljs</em> folder, create <em class="name">user</em> folder.<br>
+				      This is where you will store your own scripts.
+				    </p>
+				    <img src="images/user-folder.png">
+				  </section>
+				  <section>
+				    <p>
+				      Open InDesign. Open the Scripts panel.
+				    </p>
+				  </section>
+				  <section>
+				    <p>
+				      Right-click on <em class="name">User</em> folder,and choose Reveal in Finder.
+				    </p>
+				    <img src="images/scripts-panel-1.png">
+				  </section>
+				  <section>
+				    <p>
+				      It will direct you to Scripts Panel, which should be empty.
+				    </p>
+				  </section>
+				  <section>
+				    With the two folders opened (basiljs and Scripts Panel),<br>
+				    open the Terminal app.<br>
+				    <em class="name">Applications > Utilities > Terminal</em>
+				  </section>
+				  <section>
+				    <p>
+				      Type in the following command into the Terminal.
+                    </p>
+                    <p>
+				      <code>ln -s basiljs-PATH Scripts-Panel-PATH</code>
+				    </p>
+				    <img src="images/terminal-1.png">
+				  </section>
+				  <section>
+				    <p>
+				      Instead of typing the paths, drag & drop the folders into the Terminal window.
+                    </p>
+                    <p>
+				      <code>ln -s basiljs-PATH Scripts-Panel-PATH</code>
+				      <img src="images/terminal-1.png">
+				    </p>
+				  </section>
+				  <section>
+				    <p>
+				      Now, you will see the <em class="name">basiljs</em> in the Scripts panel in InDesign.
+				    </p>
+				    <img src="images/scripts-panel-2.png">
+				  </section>
+				</section><!---------- INSTALLATION END ---------->
+				<section><!---------- RUN/EDIT SCRIPTS ---------->
+                  <section>
+                    <h2>Create and run scripts</h2>
+                  </section>
+				  <section>
+				    <h3>Code editors</h3>
+				    <p>
+							Download <a href="">ExtendScript Toolkit</a> or use any other code editors such as <a href="http://brackets.io" target="_blank">Brackets</a> or <a href="https://www.sublimetext.com/" target="_blank">Sublime Text</a>.
+				    </p>
+				  </section>
+				  <section>
+				    <h3>Start with a template</h3>
+                    <p>
+				      You will find <em class="name">template.jsx</em> in <em class="name">basiljs > bundle > scripts</em>.
+				    </p>
+				    <p>
+				      Copy the file into <em class="name">user</em> folder and rename it.
+				    </p>
+				  </section>
+				  <section>
+                    <p>
+                      Open the file, and type the code as below.
+                    </p>
+				    <img src="images/template-2.png">
+				  </section>
+				  <section>
+				    <p>
+				      Go back to InDesign, and run the script by double-clicking it inside the Scripts panel.
+				    </p>
+				    <img src="images/template-3.png">
+				  </section>
+				  <section>
+				    <h3>Tutorials</h3>
+				    <p>
+				      There are beginner's tutorials on the website, and many examples are included in <em class="name">basiljs > bundle > scripts</em> folder.
+				    </p>
+				  </section>
+				</section><!---------- RUN/EDIT SCRIPTS END ---------->
+				<section><!---------- EXAMPLES ---------->
+				  <section>
+				    <h2>Examples</h2>
+				    <p>Download example scripts <a href="files/examples.zip">here</a>.</p>
+				  </section>
+				</section><!---------- EXAMPLES END ---------->
+				<section>
+				  <h2>The End</h2>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
