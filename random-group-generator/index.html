@@ -22,7 +22,9 @@
       height: 100%;
     }
     section {
-      padding-left: 50px;
+			background: white;
+      margin-left: 50px;
+			width: 240px;
     }
     section h1 {
       margin: 12px 0;
@@ -193,15 +195,16 @@
     window.onload = function() {
       
       // read in the JSON file. for final, should be uploadable
-      $.getJSON("data/roster.json", function(data) {
-        var index = 0;
+      $.getJSON("data/roster-fa17.json", function(data) {
+        var index = 1; // which class
+				var howmany = 6; // how many for each group
         var semester = data[0].semester;
         var classes = data[0].classes;
         var myClass = classes[index]; // for testing
         var className = myClass.title;
         var classDay = myClass.day;
         var classStudents = myClass.students;
-        var groupCount = getGroupCount(classStudents.length, 2); 
+        var groupCount = getGroupCount(classStudents.length, howmany); 
         //console.log(groupCount); // how many groups?
         // randomize the roster, and assign student to each group
         groups = createGroups(groupCount, classStudents);
@@ -214,12 +217,12 @@
   </script>
 </head>
 <body>
-  <section>
+  <section class="">
     <h1>Random Group Generator</h1>
     <form>
-      <input type="radio" name="class" value="GD2 Wed" checked> GD2 Wed<br>
-      <input type="radio" name="class" value="GD3 Mon"> GD3 Mon<br>
-      <input type="radio" name="class" value="GD3 Tue"> GD3 Tue
+      <input type="radio" name="class" value="GenType Tue" checked> GenType Tue<br>
+      <input type="radio" name="class" value="GD2 Wed"> GD2 Wed<br>
+      <input type="radio" name="class" value="GD2 Thu"> GD3 Thu
     </form>
   </section>
   <canvas id="canvas" resize></canvas>
