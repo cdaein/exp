@@ -9,16 +9,16 @@ In Knowledge Discovery, machine learning is most commonly used to mean the appli
 ## Readings:
 - [Machine Learning for Designers](http://www.oreilly.com/design/free/machine-learning-for-designers.csp) (free ebook) 
 - [Machine learning for artists](http://ml4a.github.io) lecture series 
-- https://eyeondesign.aiga.org/automation-threatens-to-make-graphic-designers-obsolete/
-- Taking the robot to design school: http://www.jon.gold/2016/05/robot-design-school/
-- Algorithm-Driven Design: How Artificial Intelligence Is Changing Design: https://www.smashingmagazine.com/2017/01/algorithm-driven-design-how-artificial-intelligence-changing-design/
+- [Automation Threatens to Make Graphic Designers Obsolete](https://eyeondesign.aiga.org/automation-threatens-to-make-graphic-designers-obsolete/)
+- [Taking the robot to design school](http://www.jon.gold/2016/05/robot-design-school/)
+- [Algorithm-Driven Design: How Artificial Intelligence Is Changing Design](https://www.smashingmagazine.com/2017/01/algorithm-driven-design-how-artificial-intelligence-changing-design/)
 - http://algorithms.design
-- Digital Typography & Artiﬁcial Intelligence: http://www.typophile.com/node/107390
+- [Digital Typography & Artiﬁcial Intelligence(http://www.typophile.com/node/107390)
 - http://www.creativeai.net
-- CreativeAI on Medium: https://medium.com/@creativeai/creativeai-9d4b2346faf3
+- [CreativeAI](https://medium.com/@creativeai/creativeai-9d4b2346faf3) on Medium
 - http://createwith.ai
-- Rethinking Design Tools in the Age of Machine Learning: https://medium.com/artists-and-machine-intelligence/rethinking-design-tools-in-the-age-of-machine-learning-369f3f07ab6c
-- Art and Computers : the First Artificial Intelligence Coloring Book: https://www.amazon.com/Art-Computers-Artificial-Intelligence-Coloring/dp/B000LZG42C
+- Rethinking Design Tools in the Age of Machine Learning](https://medium.com/artists-and-machine-intelligence/rethinking-des[ign-tools-in-the-age-of-machine-learning-369f3f07ab6c)
+- [Art and Computers : the First Artificial Intelligence Coloring Book](https://www.amazon.com/Art-Computers-Artificial-Intelligence-Coloring/dp/B000LZG42C)
 
 ## Projects:
 - 50k fonts: https://erikbern.com/2016/01/21/analyzing-50k-fonts-using-deep-neural-networks.html
