@@ -11,7 +11,6 @@ In Knowledge Discovery, machine learning is most commonly used to mean the appli
 
 ## Readings
 - [Machine Learning for Designers](http://www.oreilly.com/design/free/machine-learning-for-designers.csp) (free ebook) 
-- [Machine learning for artists](http://ml4a.github.io) lecture series 
 - [Automation Threatens to Make Graphic Designers Obsolete](https://eyeondesign.aiga.org/automation-threatens-to-make-graphic-designers-obsolete/)
 - [Taking the robot to design school](http://www.jon.gold/2016/05/robot-design-school/)
 - [Algorithm-Driven Design: How Artificial Intelligence Is Changing Design](https://www.smashingmagazine.com/2017/01/algorithm-driven-design-how-artificial-intelligence-changing-design/)
@@ -43,11 +42,10 @@ In Knowledge Discovery, machine learning is most commonly used to mean the appli
 - [Image upscaling](http://waifu2x.udp.jp/index.ko.html)
 - https://letsenhance.io
 
-## Learning:
+## Learning
+- [Machine learning for artists](http://ml4a.github.io) lecture series 
 - [Machine learning for musicians and artists](https://www.kadenze.com/courses/machine-learning-for-musicians-and-artists/info)
 - [Nature of Code part 2](https://github.com/shiffman/NOC-S17-2-Intelligence-Learning)
 - [Recurrent neural network tutorial for artists](http://blog.otoro.net/2017/01/01/recurrent-neural-network-artist/)
-
-
 
 
