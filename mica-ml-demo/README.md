@@ -1,12 +1,12 @@
 # Machine Learning and Graphic Design
-This is a collection of links and examples of machine learning in the context of graphic design.
+This is a collection of links and examples of machine learning in the context of graphic design. This is by nomeans a complete or exhaustive list.
 
 Nov. 2017
 
 from http://ai.stanford.edu/~ronnyk/glossary.html: 
 In Knowledge Discovery, machine learning is most commonly used to mean the application of induction algorithms, which is one step in the knowledge discovery process. This is similar to the definition of empirical learning or inductive learning in Readings in Machine Learning by Shavlik and Dietterich. Note that in their definition, training examples are "externally supplied," whereas here they are assumed to be supplied by a previous stage of the knowledge discovery process. Machine Learning is the field of scientific study that concentrates on induction algorithms and on other algorithms that can be said to "learn."
 
-## Readings:
+## Readings
 - [Machine Learning for Designers](http://www.oreilly.com/design/free/machine-learning-for-designers.csp) (free ebook) 
 - [Machine learning for artists](http://ml4a.github.io) lecture series 
 - [Automation Threatens to Make Graphic Designers Obsolete](https://eyeondesign.aiga.org/automation-threatens-to-make-graphic-designers-obsolete/)
@@ -20,13 +20,13 @@ In Knowledge Discovery, machine learning is most commonly used to mean the appli
 - Rethinking Design Tools in the Age of Machine Learning](https://medium.com/artists-and-machine-intelligence/rethinking-des[ign-tools-in-the-age-of-machine-learning-369f3f07ab6c)
 - [Art and Computers : the First Artificial Intelligence Coloring Book](https://www.amazon.com/Art-Computers-Artificial-Intelligence-Coloring/dp/B000LZG42C)
 
-## Projects:
+## Projects
 - 50k fonts: https://erikbern.com/2016/01/21/analyzing-50k-fonts-using-deep-neural-networks.html
 - AirBNB Sketching interfaces: https://airbnb.design/sketching-interfaces/
 - Fake Kanji: http://blog.otoro.net/2015/12/28/recurrent-net-dreams-up-fake-chinese-characters-in-vector-format-with-tensorflow/
 - Netflix Extracting image metadata: https://medium.com/netflix-techblog/extracting-image-metadata-at-scale-c89c60a2b9d2
 
-## Tools:
+## Tools
 - IDEO font map: http://fontmap.ideo.com
 - AI web design: https://thegrid.io
 - Designscape interactive layout: http://www.dgp.toronto.edu/~donovan/design/index.html
