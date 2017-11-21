@@ -29,7 +29,7 @@ In Knowledge Discovery, machine learning is most commonly used to mean the appli
 - [What is AI, really?](https://medium.com/ai-first-design/what-is-ai-really-5a4a7ceb5008), part of the series, [AI-First Design](https://ai-first.design)
 
 ## Projects
-- 50k fonts: https://erikbern.com/2016/01/21/analyzing-50k-fonts-using-deep-neural-networks.html
+- [50k fonts](https://erikbern.com/2016/01/21/analyzing-50k-fonts-using-deep-neural-networks.html)
 - [AirBNB Sketching interfaces](https://airbnb.design/sketching-interfaces/)
 - [Fake Kanji](http://blog.otoro.net/2015/12/28/recurrent-net-dreams-up-fake-chinese-characters-in-vector-format-with-tensorflow/)
 - [Netflix Extracting image metadata](https://medium.com/netflix-techblog/extracting-image-metadata-at-scale-c89c60a2b9d2)
