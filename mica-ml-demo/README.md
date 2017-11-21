@@ -1,6 +1,8 @@
 # Machine Learning and Graphic Design
 This is a collection of links and examples of machine learning in the context of graphic design. This is by nomeans a complete or exhaustive list.
 
+Short URL: http://bit.ly/ml-demo-2017
+
 Nov. 2017
 
 ### Machine learning
