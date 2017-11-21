@@ -33,6 +33,8 @@ In Knowledge Discovery, machine learning is most commonly used to mean the appli
 - [AirBNB Sketching interfaces](https://airbnb.design/sketching-interfaces/)
 - [Fake Kanji](http://blog.otoro.net/2015/12/28/recurrent-net-dreams-up-fake-chinese-characters-in-vector-format-with-tensorflow/)
 - [Netflix Extracting image metadata](https://medium.com/netflix-techblog/extracting-image-metadata-at-scale-c89c60a2b9d2)
+- [Quickdraw](https://quickdraw.withgoogle.com)
+- [Objectifier Spatial Programming](https://experiments.withgoogle.com/ai/objectifier-spatial-programming)
 
 ## Tools
 - https://teachablemachine.withgoogle.com
@@ -50,5 +52,6 @@ In Knowledge Discovery, machine learning is most commonly used to mean the appli
 - [Machine learning for musicians and artists](https://www.kadenze.com/courses/machine-learning-for-musicians-and-artists/info)
 - [Nature of Code part 2](https://github.com/shiffman/NOC-S17-2-Intelligence-Learning)
 - [Recurrent neural network tutorial for artists](http://blog.otoro.net/2017/01/01/recurrent-neural-network-artist/)
+- [Teachable Machine](https://teachablemachine.withgoogle.com)
 
 
