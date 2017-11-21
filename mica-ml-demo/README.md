@@ -17,7 +17,7 @@ In Knowledge Discovery, machine learning is most commonly used to mean the appli
 - [Taking the robot to design school](http://www.jon.gold/2016/05/robot-design-school/)
 - [Algorithm-Driven Design: How Artificial Intelligence Is Changing Design](https://www.smashingmagazine.com/2017/01/algorithm-driven-design-how-artificial-intelligence-changing-design/)
 - http://algorithms.design
-- [Digital Typography & Artiﬁcial Intelligence(http://www.typophile.com/node/107390)
+- [Digital Typography & Artiﬁcial Intelligence](http://www.typophile.com/node/107390)
 - http://www.creativeai.net
 - [CreativeAI](https://medium.com/@creativeai/creativeai-9d4b2346faf3) on Medium
 - http://createwith.ai
