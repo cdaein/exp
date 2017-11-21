@@ -45,7 +45,7 @@ In Knowledge Discovery, machine learning is most commonly used to mean the appli
 - [AI web design](https://thegrid.io)
 - [Designscape interactive layout](http://www.dgp.toronto.edu/~donovan/design/index.html)
 - [Wekinator](http://www.wekinator.org)
-- [Adobe Sensei](https://www.adobe.com/sensei.html#x), [presentation video](https://youtu.be/4j_pd1awSac?t=2h6m31s)
+- [Adobe Sensei](https://www.adobe.com/sensei.html#x), [presentation video](https://youtu.be/4j_pd1awSac?t=2h6m40s)
 - [Adobe Scribbler](https://research.adobe.com/project/scribbler-controlling-deep-image-synthesis-with-sketch-and-color/)
 - [Image upscaling](http://waifu2x.udp.jp/index.ko.html)
 - https://letsenhance.io
