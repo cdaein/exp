@@ -35,6 +35,8 @@ In Knowledge Discovery, machine learning is most commonly used to mean the appli
 - [Netflix Extracting image metadata](https://medium.com/netflix-techblog/extracting-image-metadata-at-scale-c89c60a2b9d2)
 - [Quickdraw](https://quickdraw.withgoogle.com)
 - [Objectifier Spatial Programming](https://experiments.withgoogle.com/ai/objectifier-spatial-programming)
+- https://experiments.withgoogle.com/ai/giorgio-cam/view/
+
 
 ## Tools
 - https://teachablemachine.withgoogle.com
