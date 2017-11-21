@@ -39,7 +39,6 @@ In Knowledge Discovery, machine learning is most commonly used to mean the appli
 
 
 ## Tools
-- https://teachablemachine.withgoogle.com
 - [IDEO font map](http://fontmap.ideo.com)
 - [AI web design](https://thegrid.io)
 - [Designscape interactive layout](http://www.dgp.toronto.edu/~donovan/design/index.html)
