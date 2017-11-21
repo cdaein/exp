@@ -21,7 +21,7 @@ In Knowledge Discovery, machine learning is most commonly used to mean the appli
 - http://www.creativeai.net
 - [CreativeAI](https://medium.com/@creativeai/creativeai-9d4b2346faf3) on Medium
 - http://createwith.ai
-- Rethinking Design Tools in the Age of Machine Learning](https://medium.com/artists-and-machine-intelligence/rethinking-des[ign-tools-in-the-age-of-machine-learning-369f3f07ab6c)
+- [Rethinking Design Tools in the Age of Machine Learning](https://medium.com/artists-and-machine-intelligence/rethinking-des[ign-tools-in-the-age-of-machine-learning-369f3f07ab6c)
 - [Art and Computers : the First Artificial Intelligence Coloring Book](https://www.amazon.com/Art-Computers-Artificial-Intelligence-Coloring/dp/B000LZG42C)
 - https://medium.com/@hint_fm
 - [Artists and machine intelligence](https://medium.com/artists-and-machine-intelligence)
