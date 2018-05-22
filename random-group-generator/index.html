@@ -196,8 +196,9 @@
       
       // read in the JSON file. for final, should be uploadable
       $.getJSON("data/roster-fa17.json", function(data) {
+				console.log("worked...");
         var index = 1; // which class
-				var howmany = 6; // how many for each group
+				var howmany = 3; // how many for each group
         var semester = data[0].semester;
         var classes = data[0].classes;
         var myClass = classes[index]; // for testing
@@ -213,7 +214,6 @@
         displayGroups();
       });
     }
-
   </script>
 </head>
 <body>
