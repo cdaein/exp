@@ -26,7 +26,8 @@ function draw() {
 	
 	xpos += x;
 	ypos += y;
-	diam += z;
+//	diam += z;
+	if (diam > 200) diam = 200;
 	
 	fill(0);
 	stroke(0);
