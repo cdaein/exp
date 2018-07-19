@@ -19,10 +19,11 @@ function setup() {
 function draw() {
 	background(123);
 	
+	textSize(48);
 	fill(255);
-	text("x:"+x, 20, 20);
-	text("y:"+y, 20, 40);
-	text("z:"+z, 20, 60);
+	text("x:"+x, 20, 40);
+	text("y:"+y, 20, 80);
+	text("z:"+z, 20, 120);
 	
 	xpos += x;
 	ypos += y;
