@@ -25,8 +25,10 @@ function draw() {
 	text("y:" + rotationY, 20, 80);
 	text("z:" + rotationZ, 20, 120);
 
-	const rX = map(rotationX, -180, 180, -height / 2, height / 2);
-	const rY = map(rotationY, -180, 180, -width / 2, width / 2);
+	const rX = map(rotationX, -90, 90, -height / 2, height / 2);
+	const rY = map(rotationY, -90, 90, -width / 2, width / 2);
+	rX = constrain(rX, -height / 2, height / 2);
+	rY = constrain(rY, -width / 2, width / 2);
 
 	xpos = width / 2 + rY;
 	ypos = height / 2 + rX;
