@@ -25,17 +25,22 @@ function draw() {
 	text("y:" + rotationY, 20, 80);
 	text("z:" + rotationZ, 20, 120);
 
-	const rX = map(rotationX, -90, 90, -height / 2, height / 2);
-	const rY = map(rotationY, -90, 90, -width / 2, width / 2);
+	let rX = map(rotationX, -90, 90, -height / 2, height / 2);
+	let rY = map(rotationY, -90, 90, -width / 2, width / 2);
 	rX = constrain(rX, -height / 2, height / 2);
 	rY = constrain(rY, -width / 2, width / 2);
 
-	xpos = width / 2 + rY;
-	ypos = height / 2 + rX;
+	const center = createVector(width / 2, height / 2);
+	const pos = createVector();
+	const acc = createVector(rotationX, rotationY);
+	acc.normalize();
+	pos.add(center);
+	pos.add(acc);
+
 	//	diam += z;
 	if (diam > 200) diam = 200;
 
 	fill(0);
 	stroke(0);
-	ellipse(xpos, ypos, diam, diam);
+	ellipse(pos.x, pos.y, diam, diam);
 }
