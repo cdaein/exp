@@ -21,12 +21,12 @@ function draw() {
 
 	textSize(48);
 	fill(255, 255, 0);
-	text("x:" + x, 20, 40);
-	text("y:" + y, 20, 80);
-	text("z:" + z, 20, 120);
+	text("x:" + rotationX, 20, 40);
+	text("y:" + rotationY, 20, 80);
+	text("z:" + rotationZ, 20, 120);
 
-	xpos += rotationX;
-	ypos += rotationY;
+	xpos += rotationY;
+	ypos += rotationX;
 	//	diam += z;
 	if (diam > 200) diam = 200;
 
