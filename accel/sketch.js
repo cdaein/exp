@@ -24,7 +24,7 @@ function draw() {
 	text("y:" + rotationY, 20, 80);
 	text("z:" + rotationZ, 20, 120);
 
-	acc = createVector(rotationX, rotationY);
+	acc = createVector(rotationY, rotationX);
 	//	acc = createVector(.1, -1);
 	acc.normalize();
 	vel.add(acc);
