@@ -1,19 +1,18 @@
-// accelerometer variables
-var x = 0;
-var y = 0;
-var z = 0;
-
-var xpos;
-var ypos;
 var diam;
+
+let loc;
+let vel;
+let acc;
 
 function setup() {
 	var myCanvas = createCanvas(windowWidth, windowHeight);
 	myCanvas.parent('p5container');
 
-	xpos = width / 2;
-	ypos = height / 2;
 	diam = 100;
+
+	loc = createVector(width / 2, height / 2);
+	vel = createVector();
+	acc = createVector();
 }
 
 function draw() {
@@ -30,14 +29,13 @@ function draw() {
 	rX = constrain(rX, -height / 2, height / 2);
 	rY = constrain(rY, -width / 2, width / 2);
 
-	const center = createVector(width / 2, height / 2);
-	let loc = createVector();
-	let vel = createVector();
-	let acc = createVector(rotationX, rotationY);
+
+	acc = createVector(rotationX, rotationY);
+	//	acc = createVector(.1, -1);
+	acc.normalize();
 	vel.add(acc);
-	vel.limit(5);
+	vel.limit(20);
 	loc.add(vel);
-	loc.add(center);
 
 
 	fill(0);
