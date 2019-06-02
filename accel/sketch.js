@@ -28,7 +28,7 @@ function draw() {
 	//	acc = createVector(.1, -1);
 	acc.normalize();
 	vel.add(acc);
-	vel.limit(20);
+	vel.limit(5);
 	loc.add(vel);
 	loc.x = constrain(loc.x, 0, width);
 	loc.y = constrain(loc.y, 0, height);
