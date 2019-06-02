@@ -31,16 +31,16 @@ function draw() {
 	rY = constrain(rY, -width / 2, width / 2);
 
 	const center = createVector(width / 2, height / 2);
-	const pos = createVector();
-	const acc = createVector(rotationX, rotationY);
-	acc.normalize();
-	pos.add(center);
-	pos.add(acc);
+	let loc = createVector();
+	let vel = createVector();
+	let acc = createVector(rotationX, rotationY);
+	vel.add(acc);
+	vel.limit(5);
+	loc.add(vel);
+	loc.add(center);
 
-	//	diam += z;
-	if (diam > 200) diam = 200;
 
 	fill(0);
 	stroke(0);
-	ellipse(pos.x, pos.y, diam, diam);
+	ellipse(loc.x, loc.y, diam, diam);
 }
