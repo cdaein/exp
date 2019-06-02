@@ -24,19 +24,15 @@ function draw() {
 	text("y:" + rotationY, 20, 80);
 	text("z:" + rotationZ, 20, 120);
 
-	let rX = map(rotationX, -90, 90, -height / 2, height / 2);
-	let rY = map(rotationY, -90, 90, -width / 2, width / 2);
-	rX = constrain(rX, -height / 2, height / 2);
-	rY = constrain(rY, -width / 2, width / 2);
-
-
 	acc = createVector(rotationX, rotationY);
 	//	acc = createVector(.1, -1);
 	acc.normalize();
 	vel.add(acc);
 	vel.limit(20);
 	loc.add(vel);
-
+	loc.x = constrain(loc.x, 0, width);
+	loc.y = constrain(loc.y, 0, height);
+	//	loc.set(x, y);
 
 	fill(0);
 	stroke(0);
