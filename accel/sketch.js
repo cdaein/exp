@@ -25,8 +25,8 @@ function draw() {
 	text("y:" + rotationY, 20, 80);
 	text("z:" + rotationZ, 20, 120);
 
-	xpos += rotationY;
-	ypos += rotationX;
+	xpos = rotationY;
+	ypos = rotationX;
 	//	diam += z;
 	if (diam > 200) diam = 200;
 
