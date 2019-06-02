@@ -25,8 +25,11 @@ function draw() {
 	text("y:" + rotationY, 20, 80);
 	text("z:" + rotationZ, 20, 120);
 
-	xpos = rotationY;
-	ypos = rotationX;
+	const rX = map(rotationX, -180, 180, -height / 2, height / 2);
+	const rY = map(rotationY, -180, 180, -width / 2, width / 2);
+
+	xpos = width / 2 + rY;
+	ypos = height / 2 + rX;
 	//	diam += z;
 	if (diam > 200) diam = 200;
 
