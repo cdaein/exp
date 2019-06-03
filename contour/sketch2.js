@@ -51,7 +51,7 @@ function draw() {
 	acc.set(rotationY, rotationX); // get accelerometer data; y/x inverted
 	//	acc.normalize(); // only need direction
 	vel.add(acc);
-	vel.limit(8); // keep it slow, but low val has little sense of acc
+	vel.limit(4); // keep it slow, but low val has little sense of acc
 	loc.add(vel);
 	loc.x = constrain(loc.x, 0, width);
 	loc.y = constrain(loc.y, 0, height);
