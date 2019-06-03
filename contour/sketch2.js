@@ -47,8 +47,8 @@ function draw() {
 	const w = width - width / 8;
 	const h = height - width / 8;
 
-	acc.set(mouseX - width / 2, mouseY - height / 2);
-	//	acc.set(rotationY, rotationX); // get accelerometer data; y/x inverted
+	//	acc.set(mouseX - width / 2, mouseY - height / 2);
+	acc.set(rotationY, rotationX); // get accelerometer data; y/x inverted
 	//	acc.normalize(); // only need direction
 	vel.add(acc);
 	vel.limit(8); // keep it slow, but low val has little sense of acc
