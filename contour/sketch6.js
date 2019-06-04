@@ -77,8 +77,8 @@ function draw() {
 		//		tloc.x = w / 2 - cos(speed * 1) * w / 6;
 		//		tloc.y = h / 2 - sin(speed * 2) * h / 6;
 		// for mobile
-		tloc.x = w / 2 + constrain(map(rotationY, -45, 45, -w / 2, w / 2), -w / 2, w / 2);
-		tloc.y = h / 2 + constrain(map(rotationX, -45, 45, -h / 2, h / 2), -h / 2, h / 2);
+		tloc.x = w / 2 + constrain(map(rotationY, -30, 30, -w / 2, w / 2), -w / 2, w / 2);
+		tloc.y = h / 2 + constrain(map(rotationX, -30, 30, -h / 2, h / 2), -h / 2, h / 2);
 	}
 	loc.x = lerp(loc.x, tloc.x, .1);
 	loc.y = lerp(loc.y, tloc.y, .1);
