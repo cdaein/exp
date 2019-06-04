@@ -2,7 +2,7 @@ let canvas;
 let ctx;
 let ratio;
 
-const numShapes = 5;
+const numShapes = 6;
 let shps = [];
 
 let loc;
@@ -26,13 +26,11 @@ let totalFrames;
 
 
 function setup() {
-	ratio = 5 / 7;
+	ratio = 5 / 8;
 	const dim = calcDimensionFromRatio(ratio);
 	// 1080 x 1920 = 540 x 960 = 390 x 640
 	canvas = createCanvas(dim.x, dim.y);
 	canvas.position((windowWidth - canvas.width) / 2, (windowHeight - canvas.height) / 2);
-
-	frameRate(30);
 	noSmooth();
 	w = width;
 	h = height;
@@ -56,7 +54,7 @@ function setup() {
 	vel = createVector();
 	acc = createVector();
 
-	bgCol = color(180, 85, 85);
+	bgCol = color(210, 85, 85);
 	boxCol = color(0, 0, 100);
 	boxCols[0] = color(0, 0, 0);
 	//	boxCols[1] = color(310, 70, 100);
@@ -67,6 +65,7 @@ function setup() {
 	boxCols[2] = color(120, 50, 95);
 	boxCols[3] = color(0, 0, 92);
 	boxCols[4] = color(60, 90, 95);
+	boxCols[5] = color(0, 0, 100);
 
 	txtCol = color(0, 0, 0);
 	boxShaCol = color(0, 0, 0, 40);
@@ -105,16 +104,15 @@ function draw() {
 		const lx = lerp(w / 2, loc.x, i / numShapes);
 		const ly = lerp(h / 2, loc.y, i / numShapes);
 		let shp = shps[i];
-		shp.setContourRect(lx, ly, bw - (i * w * .16), bh - (i * h * .16));
+		shp.setContourRect(lx, ly, bw - (i * w * .13), bh - (i * h * .13));
 
 		ctx.shadowColor = boxShaCol;
 		ctx.shadowBlur = w * .1;
 		ctx.shadowOffsetX = 0;
 		ctx.shadowOffsetY = 0;
 		//		fill(boxCol);
-		//		fill(0, i * 20, 100 - i * 5);
-		//		fill((150 + i * 130) % 360, (i * 34) % 100, 100);
-		fill(boxCols[i]);
+		fill(90 + i * 20, i * 20, 100 - i * 5);
+		//		fill(boxCols[i]);
 		//		if (i == 0) fill(txtCol);
 		shp.display();
 
@@ -128,7 +126,7 @@ function draw() {
 		translate(w / 2, h / 2);
 		fill(txtCol);
 		if (i == 1) {
-			textCircle(h * .36, h * .36, w * .14); //.14
+			textCircle(h * .36, h * .36, w * .16); //.14
 		} else if (i == 3) {
 			textCircle(h * .2, h * .2, w * .1); // .1
 		}
@@ -142,8 +140,8 @@ function draw() {
 	textStyle(ITALIC);
 	fill(50, 20, 70);
 
-	const toffx = w * .015;
-	const toffy = w * .015;
+	const toffx = w * .013;
+	const toffy = w * .013;
 
 	push();
 	translate(w * .5, toffy);
@@ -169,10 +167,10 @@ function draw() {
 	pop();
 
 	stroke(50, 20, 70);
-	line(w * .15, h * .035, w - w * .15, h * .035); // t
-	line(w * .95, h * .13, w * .95, h - h * .13); // r
-	line(w * .15, h - h * .035, w - w * .15, h - h * .035); // b
-	line(w - w * .95, h * .13, w - w * .95, h - h * .13); // l
+	line(w * .15, h * .032, w - w * .15, h * .032); // t
+	line(w * .952, h * .18, w * .952, h - h * .18); // r
+	line(w * .15, h - h * .032, w - w * .15, h - h * .032); // b
+	line(w - w * .952, h * .18, w - w * .952, h - h * .18); // l
 
 
 	/*
@@ -194,8 +192,6 @@ function draw() {
 	//	fill(230, 85, 90);
 	text('\u2660', w * .06, h - h * .04); // spade
 
-
-
 	//	if (frameCount % 15 == 0) console.log(frameRate());
 }
 
@@ -203,8 +199,8 @@ function textCircle(wi, hi, tsz) {
 	textAlign(CENTER, CENTER);
 	textStyle(ITALIC);
 	for (let i = 0; i < msg.length; i++) {
-		const x = .86 * cos(i * TWO_PI / msg.length - speed) * wi;
-		const y = 1.05 * sin(i * TWO_PI / msg.length - speed) * hi;
+		const x = .7 * cos(i * TWO_PI / msg.length - speed) * wi;
+		const y = 1.2 * sin(i * TWO_PI / msg.length - speed) * hi;
 		push();
 		translate(x, y);
 		const angle = atan2(y, x);
@@ -262,7 +258,6 @@ class Compound {
 		vertex(0, height);
 
 		beginContour();
-
 		vertex(this.ct.x - this.ctrW / 2, this.ct.y);
 		bezierVertex(this.ct.x - this.ctrW / 2, this.ct.y + this.ctrH / 2 - offy, this.ct.x - this.ctrW / 2, this.ct.y + this.ctrH / 2 - offy, this.ct.x - this.ctrW / 2 + offx, this.ct.y + this.ctrH / 2 - offy);
 		bezierVertex(this.ct.x - this.ctrW / 2 + offx, this.ct.y + this.ctrH / 2, this.ct.x - this.ctrW / 2 + offx, this.ct.y + this.ctrH / 2, this.ct.x, this.ct.y + this.ctrH / 2);
@@ -272,7 +267,6 @@ class Compound {
 		bezierVertex(this.ct.x + this.ctrW / 2 - offx, this.ct.y - this.ctrH / 2, this.ct.x + this.ctrW / 2 - offx, this.ct.y - this.ctrH / 2, this.ct.x, this.ct.y - this.ctrH / 2);
 		bezierVertex(this.ct.x - this.ctrW / 2 + offx, this.ct.y - this.ctrH / 2, this.ct.x - this.ctrW / 2 + offx, this.ct.y - this.ctrH / 2, this.ct.x - this.ctrW / 2 + offx, this.ct.y - this.ctrH / 2 + offy);
 		bezierVertex(this.ct.x - this.ctrW / 2, this.ct.y - this.ctrH / 2 + offy, this.ct.x - this.ctrW / 2, this.ct.y - this.ctrH / 2 + offy, this.ct.x - this.ctrW / 2, this.ct.y);
-
 		endContour();
 
 		endShape();
