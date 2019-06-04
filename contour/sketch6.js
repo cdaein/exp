@@ -7,8 +7,6 @@ let shps = [];
 
 let loc;
 let tloc;
-let vel;
-let acc;
 
 let w, h; // substitute width and height
 
@@ -71,17 +69,6 @@ function draw() {
 
 	speed = frameCount / totalFrames * TWO_PI;
 
-	//	loc.set(mouseX, mouseY);
-	//	acc.set(mouseX - w / 2, mouseY - h / 2);
-	//	acc.set(rotationY, rotationX); // get accelerometer data; y/x inverted
-	//	acc.normalize(); // only need direction
-	//	vel.add(acc);
-	//	vel.limit(10); // keep it slow, but low val has little sense of acc
-	//	loc.add(vel);
-	//	loc.x = constrain(loc.x, 0, w);
-	//	loc.y = constrain(loc.y, 0, h);
-
-
 	if (mouseIsPressed) {
 		tloc.x = mouseX;
 		tloc.y = mouseY;
@@ -90,8 +77,8 @@ function draw() {
 		//		tloc.x = w / 2 - cos(speed * 1) * w / 6;
 		//		tloc.y = h / 2 - sin(speed * 2) * h / 6;
 		// for mobile
-		tloc.x = w / 2 + constrain(rotationY, -90, 90);
-		tloc.y = h / 2 + constrain(rotationX, -90, 90);
+		tloc.x = w / 2 + constrain(map(rotationY, -45, 45, -w / 2, w / 2), -w / 2, w / 2);
+		tloc.y = h / 2 + constrain(map(rotationX, -45, 45, -h / 2, h / 2), -h / 2, h / 2);
 	}
 	loc.x = lerp(loc.x, tloc.x, .1);
 	loc.y = lerp(loc.y, tloc.y, .1);
