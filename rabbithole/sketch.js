@@ -54,7 +54,7 @@ function setup() {
 	vel = createVector();
 	acc = createVector();
 
-	bgCol = color(210, 85, 85);
+	bgCol = color(210, 100, 70);
 	boxCol = color(0, 0, 100);
 	boxCols[0] = color(0, 0, 0);
 	//	boxCols[1] = color(310, 70, 100);
@@ -68,8 +68,8 @@ function setup() {
 	boxCols[5] = color(0, 0, 100);
 
 	txtCol = color(0, 0, 0);
-	boxShaCol = color(0, 0, 0, 40);
-	txtShaCol = color(0, 0, 0, 20);
+	boxShaCol = color(0, 0, 0, 70);
+	txtShaCol = color(0, 0, 0, 30);
 
 	totalFrames = 30 * 12; // 12 seconds at 30fps
 }
@@ -77,6 +77,17 @@ function setup() {
 function draw() {
 	background(bgCol);
 	noStroke();
+
+
+	fill(50, 30, 40);
+	let rnum = 0;
+	for (let j = 0; j < h; j += h / 20) {
+		for (let i = 0; i < w; i += w / 10) {
+			if (rnum % 2 == 0) ellipse(i, j, 20, 20);
+			else ellipse(i + w / 20, j, 20, 20);
+		}
+		rnum++;
+	}
 
 	speed = frameCount / totalFrames * TWO_PI;
 
@@ -91,6 +102,11 @@ function draw() {
 	loc.x = lerp(loc.x, tloc.x, .1);
 	loc.y = lerp(loc.y, tloc.y, .1);
 
+
+	ctx.shadowColor = txtShaCol;
+	ctx.shadowBlur = w * .02;
+	ctx.shadowOffsetX = (w / 2 - loc.x) * .5;
+	ctx.shadowOffsetY = (h / 2 - loc.y) * .5;
 	push();
 	translate(w / 2, h / 2);
 	fill(txtCol);
@@ -111,15 +127,15 @@ function draw() {
 		ctx.shadowOffsetX = 0;
 		ctx.shadowOffsetY = 0;
 		//		fill(boxCol);
-		fill(90 + i * 20, i * 20, 100 - i * 5);
+		fill(90 + i * 20, i * 20, 100 - i * 6);
 		//		fill(boxCols[i]);
 		//		if (i == 0) fill(txtCol);
 		shp.display();
 
 		ctx.shadowColor = txtShaCol;
 		ctx.shadowBlur = w * .02;
-		ctx.shadowOffsetX = w * .05;
-		ctx.shadowOffsetY = h * .05;
+		ctx.shadowOffsetX = (w / 2 - loc.x) * .35;
+		ctx.shadowOffsetY = (h / 2 - loc.y) * .35;
 		fill(txtCol);
 
 		push();
