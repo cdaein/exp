@@ -15,3 +15,15 @@ function easingVector(a,d,c,b,e){b=constrain(b/e,0,1);"linear"==a?b=linear(b):"e
 function easing(a,d,c,b,e){b=constrain(b/e,0,1);"linear"==a?b=linear(b):"easeInQuad"==a?b=easeInQuad(b):"easeOutQuad"==a?b=easeOutQuad(b):"easeInOutQuad"==a?b=easeInOutQuad(b):"easeInCubic"==a?b=easeInCubic(b):"easeOutCubic"==a?b=easeOutCubic(b):"easeInOutCubic"==a?b=easeInOutCubic(b):"easeInQuart"==a?b=easeInQuart(b):"easeOutQuart"==a?b=easeOutQuart(b):"easeInOutQuart"==a?b=easeInOutQuart(b):"easeInQuint"==a?b=easeInQuint(b):"easeOutQuint"==a?b=easeOutQuint(b):"easeInOutQuint"==a?b=easeInOutQuint(b):
 "easeInOutExpo"==a&&(b=easeInOutExpo(b));return d*(1-b)+c*b}function linear(a){return a}function easeInCubic(a){return pow(a,3)}function easeOutCubic(a){return 1-easeInCubic(1-a)}function easeInOutCubic(a){return.5>a?easeInCubic(2*a)/2:1-easeInCubic(2*(1-a))/2}function easeInQuad(a){return a*a}function easeOutQuad(a){return 1-easeInQuad(1-a)}function easeInOutQuad(a){return.5>a?2*a*a:-1+(4-2*a)*a}function easeInQuart(a){return a*a*a*a}function easeOutQuart(a){return 1- --a*a*a*a}
 function easeInOutQuart(a){return.5>a?8*a*a*a*a:1-8*--a*a*a*a}function easeInQuint(a){return a*a*a*a*a}function easeOutQuint(a){return 1+--a*a*a*a*a}function easeInOutQuint(a){return.5>a?16*a*a*a*a*a:1+16*--a*a*a*a*a}function easeInOutExpo(a){return 0==a?0:1==a?1:.5>a?pow(2,20*a-10)/2:(2-pow(2,-20*a+10))/2};
+
+// disable elastic bounce effect on mobile browser
+function preventDefault(e){
+    e.preventDefault();
+}
+
+function disableScroll(){
+    document.body.addEventListener('touchmove', preventDefault, { passive: false });
+}
+function enableScroll(){
+    document.body.removeEventListener('touchmove', preventDefault);
+}

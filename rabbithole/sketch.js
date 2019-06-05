@@ -10,3 +10,15 @@ function windowResized(){var a=calcDimensionFromRatio(ratio);resizeCanvas(a.x,a.
 Compound.prototype.display=function(){var a=.1*this.ctrW,c=.1*this.ctrW;beginShape();vertex(0,0);vertex(width,0);vertex(width,height);vertex(0,height);beginContour();vertex(this.ct.x-this.ctrW/2,this.ct.y);bezierVertex(this.ct.x-this.ctrW/2,this.ct.y+this.ctrH/2-c,this.ct.x-this.ctrW/2,this.ct.y+this.ctrH/2-c,this.ct.x-this.ctrW/2+a,this.ct.y+this.ctrH/2-c);bezierVertex(this.ct.x-this.ctrW/2+a,this.ct.y+this.ctrH/2,this.ct.x-this.ctrW/2+a,this.ct.y+this.ctrH/2,this.ct.x,this.ct.y+this.ctrH/2);bezierVertex(this.ct.x+
 this.ctrW/2-a,this.ct.y+this.ctrH/2,this.ct.x+this.ctrW/2-a,this.ct.y+this.ctrH/2,this.ct.x+this.ctrW/2-a,this.ct.y+this.ctrH/2-c);bezierVertex(this.ct.x+this.ctrW/2,this.ct.y+this.ctrH/2-c,this.ct.x+this.ctrW/2,this.ct.y+this.ctrH/2-c,this.ct.x+this.ctrW/2,this.ct.y);bezierVertex(this.ct.x+this.ctrW/2,this.ct.y-this.ctrH/2+c,this.ct.x+this.ctrW/2,this.ct.y-this.ctrH/2+c,this.ct.x+this.ctrW/2-a,this.ct.y-this.ctrH/2+c);bezierVertex(this.ct.x+this.ctrW/2-a,this.ct.y-this.ctrH/2,this.ct.x+this.ctrW/
 2-a,this.ct.y-this.ctrH/2,this.ct.x,this.ct.y-this.ctrH/2);bezierVertex(this.ct.x-this.ctrW/2+a,this.ct.y-this.ctrH/2,this.ct.x-this.ctrW/2+a,this.ct.y-this.ctrH/2,this.ct.x-this.ctrW/2+a,this.ct.y-this.ctrH/2+c);bezierVertex(this.ct.x-this.ctrW/2,this.ct.y-this.ctrH/2+c,this.ct.x-this.ctrW/2,this.ct.y-this.ctrH/2+c,this.ct.x-this.ctrW/2,this.ct.y);endContour();endShape()};
+
+// disable elastic bounce effect on mobile browser
+function preventDefault(e){
+    e.preventDefault();
+}
+
+function disableScroll(){
+    document.body.addEventListener('touchmove', preventDefault, { passive: false });
+}
+function enableScroll(){
+    document.body.removeEventListener('touchmove', preventDefault);
+}
