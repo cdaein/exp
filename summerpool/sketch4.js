@@ -28,7 +28,8 @@ function preload() {
 
 function setup() {
 	canvas = createCanvas(500, 800, WEBGL);
-	pixelDensity(displayDensity());
+	// pixelDensity(displayDensity());
+	pixelDensity(1);
 	w = width;
 	h = height;
 
