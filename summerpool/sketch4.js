@@ -28,8 +28,7 @@ function preload() {
 
 function setup() {
 	canvas = createCanvas(windowWidth, windowHeight, WEBGL);
-	// pixelDensity(displayDensity());
-	pixelDensity(1);
+	pixelDensity(displayDensity());
 	w = width;
 	h = height;
 
@@ -91,19 +90,21 @@ function draw() {
 	//	world.gravity.x = dir * .2;
 	//	world.gravity.y = dir * .2;
 
+	//	lights();
+
 	drawPool(300);
 
 
-	for (let i = 0; i < letters.length; i++) {
-		const l = letters[i];
-		l.setColor(color(0, 50, 0, 30));
-		l.show();
-	}
-
-	push();
-	translate(0, 0, -300);
-	image(pg, 0, 0);
-	pop();
+	//	for (let i = 0; i < letters.length; i++) {
+	//		const l = letters[i];
+	//		l.setColor(color(0, 50, 0, 30));
+	//		l.show();
+	//	}
+	//
+	//	push();
+	//	translate(0, 0, -300);
+	//	image(pg, 0, 0);
+	//	pop();
 
 	for (let i = 0; i < letters.length; i++) {
 		const l = letters[i];
