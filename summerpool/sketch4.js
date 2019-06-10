@@ -32,8 +32,8 @@ function setup() {
 	w = width;
 	h = height;
 
-	gl = this._renderer.GL;
-	gl.disable(gl.DEPTH_TEST); // had too many problems with text, so treat it more like 2d layers.
+	// gl = this._renderer.GL;
+	// gl.disable(gl.DEPTH_TEST); // had too many problems with text, so treat it more like 2d layers.
 
 	pg = createGraphics(w, h);
 	pg.textFont(font);
@@ -92,7 +92,7 @@ function draw() {
 
 	//	lights();
 
-	// drawPool(300);
+	drawPool(300);
 
 
 	//	for (let i = 0; i < letters.length; i++) {
