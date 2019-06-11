@@ -1,0 +1,36 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: rgb(27, 164, 175);
+}
+
+canvas {
+  margin: auto;
+  display: block;
+}
+
+#input {
+  font-size: 16px;
+  border: 0;
+  border-radius: 0;
+  box-sizing: border-box;
+  width: 80%;
+  height: 40px;
+  text-transform: uppercase;
+}
+
+#button {
+  background: gold;
+  border: 0;
+  font-size: 12px;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  width: 20%;
+  height: 40px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+#button:hover {
+ background: orange; 
+}
