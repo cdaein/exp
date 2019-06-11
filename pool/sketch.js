@@ -123,14 +123,14 @@ function draw() {
   // water surface
   updateSurface();
   push();
-  translate(0, 0, -300);
+  translate(0, 0, -320);
   translate(0, 0, sin(frameCount / 80) * 20);
   drawSurface();
   pop();
 
   // letters
   push();
-  translate(0, 0, -300);
+  translate(0, 0, -320);
   for (let i = 0; i < letters.length; i++) {
     push();
     translate(0, 0, sin(i * 0.4 + frameCount / 80) * 20);
@@ -162,10 +162,10 @@ function drawSurface() {
         bl = tiles[idx + 1 + numTileCols];
         br = tiles[idx + 2 + numTileCols];
         
-        if (br == undefined) continue;
+        if (br == undefined) continue; // !!!
 
         const h = 180 + noise( x*.5 + frameCount*.005, y*.5 - frameCount*.005) * 20;
-        const a = sq(noise(x*.3 + frameCount*.01, y*.3 + frameCount*.01)) * 100;
+        const a = sq(noise(x*.3 + frameCount*.01, y*.3 + frameCount*.01)) * 80;
         fill(h, 60, 100, a);
         beginShape();
         vertex(tl.x, tl.y, tl.z);
@@ -263,7 +263,7 @@ function updateShapes() {
 
 function drawPool(zd) {
   const fc = color(174, 85, 69); // start fillcolor
-  const efc = color(215, 90, 64); // end fillcolor
+  const efc = color(225, 100, 64); // end fillcolor
   const sc = color(157, 35, 90); // grout color
   strokeWeight(5);
   stroke(sc);
