@@ -1,6 +1,4 @@
-/*
-- when updating text, remove bodies.
-*/
+
 
 let canvas;
 let tube;
@@ -85,7 +83,7 @@ function setup() {
 }
 
 function draw() {
-  orbitControl();
+  // orbitControl();
   clear();
   Engine.update(engine);
 
@@ -150,6 +148,7 @@ function draw() {
   // console.log(frameRate());
 }
 
+//buggy in brackets
 function drawSurface() {
   noStroke();
   let tl, tr, bl, br;
@@ -162,6 +161,8 @@ function drawSurface() {
         tr = tiles[idx + 1];
         bl = tiles[idx + 1 + numTileCols];
         br = tiles[idx + 2 + numTileCols];
+        
+        if (br == undefined) continue;
 
         const h = 180 + noise( x*.5 + frameCount*.005, y*.5 - frameCount*.005) * 20;
         const a = sq(noise(x*.3 + frameCount*.01, y*.3 + frameCount*.01)) * 100;
@@ -214,11 +215,11 @@ function updateSurface() {
 }
 
 function setupSurface() {
-  let idx = 0;
+  // let idx = 0;
   for (let y = 0; y <= h; y += yTileInc) {
     for (let x = 0; x <= w; x += xTileInc) {
-      tiles[idx] = createVector(x, y, 0);
-      idx++;
+      tiles.push( createVector(x, y, 0) );
+      // idx++;
     }
   }
 }
