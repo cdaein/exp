@@ -1,5 +1,3 @@
-
-
 let canvas;
 let tube;
 
@@ -17,15 +15,23 @@ const {
 
 let w, h;
 
-let tiles = []; // vector
-const numTileRows = 18;
-const numTileCols = 18;
+let tilePoints = []; // vector
+const numTileRows = 16;
+const numTileCols = 16;
 let xTileInc;
 let yTileInc;
 
 let boundaries = [];
 let world, engine;
 let mConstraint;
+
+let poolSfc; // start fill color
+let poolEfc; // end fill color
+let poolSc; // pool grout color
+let shadowBoxCol; // shadow fill
+let shadowTextCol; // shadow text (transparent)
+let shapeBoxCol; // main box col
+let shapeTextCol; // main text col
 
 let input, button;
 
@@ -53,6 +59,8 @@ function setup() {
 
   textFont(font);
   textAlign(CENTER, CENTER);
+  
+  setupColors();
 
   xTileInc = w / numTileCols;
   yTileInc = h / numTileRows;
@@ -106,15 +114,15 @@ function draw() {
   translate(-w / 2, -h / 2, 300);
 
   const depth = 1000;
-  drawPool(depth);
+  drawPool(depth, poolSfc, poolEfc, poolSc);
 
   // shadow
   push();
   translate(0, 0, -depth);
   for (let i = 0; i < letters.length; i++) {
     const l = letters[i];
-    l.setBoxColor(color(220, 99, 38, 40)); // shadow color
-    l.setTextColor(color(0, 0, 0, 0)); // transparent
+    l.setBoxColor(shadowBoxCol); // shadow color
+    l.setTextColor(shadowTextCol); // transparent
     l.activateShadow();
     l.show();
   }
@@ -136,8 +144,8 @@ function draw() {
     translate(0, 0, sin(i * 0.4 + frameCount / 80) * 20);
     const l = letters[i];
     l.deactivateShadow();
-    l.setBoxColor(color(6, 94, 98));
-    l.setTextColor(color(0, 0, 100));
+    l.setBoxColor(shapeBoxCol);
+    l.setTextColor(shapeTextCol);
     l.show();
     pop();
   }
@@ -148,6 +156,25 @@ function draw() {
   // console.log(frameRate());
 }
 
+function setupColors() {
+  poolSfc = color(174, 85, 69);
+  poolEfc = color(225, 100, 64);
+  poolSc = color(157, 35, 90);
+  shadowBoxCol = color(220, 99, 25, 40);
+  shadowTextCol = color(0, 0, 0, 0);
+  shapeBoxCol = color(6, 94, 98);
+  shapeTextCol = color(0, 0, 100);
+}
+
+function randColors() {
+  poolSfc = color(random(360), random(80, 100), random(60, 90));
+  poolEfc = color(random(360), random(80, 100), random(60, 90));
+  poolSc = color(random(360), random(80, 100), random(60, 90));
+  shadowBoxCol = color(random(360), random(80, 100), random(60, 90), 50);
+  shapeBoxCol = color(random(360), random(80, 100), random(60, 90));
+  shapeTextCol = color(random(360), random(80, 100), random(60, 90));
+}
+
 //buggy in brackets
 function drawSurface() {
   noStroke();
@@ -155,71 +182,44 @@ function drawSurface() {
   for (let y = 0; y < numTileRows; y++) {
     for (let x = 0; x < numTileCols; x++) {
       const idx = x + y * numTileCols + y;
-      // console.log(idx);
-      if (idx % (numTileCols + 1) != numTileCols) {
-        tl = tiles[idx];
-        tr = tiles[idx + 1];
-        bl = tiles[idx + 1 + numTileCols];
-        br = tiles[idx + 2 + numTileCols];
-        
-        if (br == undefined) continue; // !!!
+      // if (idx % (numTileCols + 1) != numTileCols) {
+      tl = tilePoints[idx];
+      tr = tilePoints[idx + 1];
+      bl = tilePoints[idx + 1 + numTileCols];
+      br = tilePoints[idx + 2 + numTileCols];
 
-        const h = 180 + noise( x*.5 + frameCount*.005, y*.5 - frameCount*.005) * 20;
-        const a = sq(noise(x*.3 + frameCount*.01, y*.3 + frameCount*.01)) * 80;
-        fill(h, 60, 100, a);
-        beginShape();
-        vertex(tl.x, tl.y, tl.z);
-        vertex(tr.x, tr.y, tr.z);
-        vertex(br.x, br.y, br.z);
-        vertex(bl.x, bl.y, bl.z);
-        endShape();
-      }
-      // console.log(idx);
-
-      // console.log((x+1) + y * numTileCols + y);
+      beginShape();
+      fill(170, 15, 100, 40 - sq(tl.z) * 3);
+      vertex(tl.x, tl.y, tl.z);
+      fill(170, 15, 100, 40 - sq(tr.z) * 3);
+      vertex(tr.x, tr.y, tr.z);
+      fill(170, 15, 100, 40 - sq(br.z) * 3);
+      vertex(br.x, br.y, br.z);
+      fill(170, 15, 100, 40 - sq(bl.z) * 3);
+      vertex(bl.x, bl.y, bl.z);
+      endShape();
+      // }
     }
   }
-  // let idx = 0;
-  // for (let y = 0; y <= h; y += yTileInc) {
-  //   for (let x = 0; x <= w; x += xTileInc) {
-  //     if (idx % (numTiles + 1) != numTiles && idx < (numTiles + 1) * numTiles - 1) {
-  //       tl = tiles[idx];
-  //       tr = tiles[idx + 1];
-  //       br = tiles[idx + numTiles + 2];
-  //       bl = tiles[idx + numTiles + 1];
-  //       const h = 180 + noise(x + frameCount * .005, y + frameCount * .005) * 20;
-  //       const a = sq(noise((x + frameCount) * .01, (y + frameCount) * .01)) * 100;
-  //       fill(h, 60, 100, a);
-  //       beginShape();
-  //       vertex(tl.x, tl.y, tl.z);
-  //       vertex(tr.x, tr.y, tr.z);
-  //       vertex(br.x, br.y, br.z);
-  //       vertex(bl.x, bl.y, bl.z);
-  //       endShape();
-  //     }
-  //     idx++;
-  //   }
-  // }
 }
 
 function updateSurface() {
   let idx = 0;
   for (let y = 0; y <= h; y += yTileInc) {
     for (let x = 0; x <= w; x += xTileInc) {
-      // tiles[idx].x += sin(x + frameCount/30) * .1;
-      // tiles[idx].y += sin(y + frameCount/30) * .1;
-      tiles[idx].z = noise((x + frameCount) * 0.01, (y + frameCount) * 0.01) * 30 - 15; // z move range
+      // tilePoints[idx].x += sin(x + frameCount/30) * .1;
+      // tilePoints[idx].y += sin(y + frameCount/30) * .1;
+      tilePoints[idx].z = noise(x * .002 + frameCount * .002, y * .002 + frameCount * .002) * 30 - 15; // z move range
+
       idx++;
     }
   }
 }
 
 function setupSurface() {
-  // let idx = 0;
-  for (let y = 0; y <= h; y += yTileInc) {
-    for (let x = 0; x <= w; x += xTileInc) {
-      tiles.push( createVector(x, y, 0) );
-      // idx++;
+  for (let y = 0; y < numTileRows + 1; y++) { // +1 for boundary points
+    for (let x = 0; x < numTileCols + 1; x++) {
+      tilePoints.push(createVector(x * xTileInc, y * yTileInc, 0));
     }
   }
 }
@@ -230,11 +230,16 @@ function setupShapes(msg) {
   }
   letters = [];
 
+  let scaleFactor;
+  if (msg.length <= 4) scaleFactor = 0.28;
+  else if (msg.length <= 6) scaleFactor = 0.25;
+  else scaleFactor = 0.16;
+
   if (h > w) { // vertical screen
     let x = w / 4;
     let y = h / 10;
     for (let i = 0; i < msg.length; i++) {
-      letters[i] = new Letter(msg[i].toUpperCase(), x, y, max(w, h) * 0.16);
+      letters[i] = new Letter(msg[i].toUpperCase(), x, y, max(w, h) * scaleFactor);
       x += w / 4;
       if (x >= w) {
         x = w / 4;
@@ -245,7 +250,7 @@ function setupShapes(msg) {
     let x = w / 10;
     let y = h / 4;
     for (let i = 0; i < msg.length; i++) {
-      letters[i] = new Letter(msg[i].toUpperCase(), x, y, max(w, h) * 0.16);
+      letters[i] = new Letter(msg[i].toUpperCase(), x, y, max(w, h) * scaleFactor);
       x += w / 5;
       if (x >= w) {
         x = w / 5;
@@ -256,18 +261,15 @@ function setupShapes(msg) {
 }
 
 function updateShapes() {
-  const msg = input.value();
+  const msg = input.value().substring(0, 15);
   setupShapes(msg);
   input.value('');
 }
 
-function drawPool(zd) {
-  const fc = color(174, 85, 69); // start fillcolor
-  const efc = color(225, 100, 64); // end fillcolor
-  const sc = color(157, 35, 90); // grout color
-  strokeWeight(5);
+function drawPool(zd, sfc, efc, sc) {
+  strokeWeight(3);
   stroke(sc);
-  fill(fc);
+  fill(sfc);
 
   const numTiles = 6;
   const winc = w / numTiles;
@@ -277,7 +279,7 @@ function drawPool(zd) {
   push(); // l
   rotateY(PI / 2);
   for (let x = 0; x < zd - zinc; x += zinc) {
-    fill(lerpColor(fc, efc, x / zd));
+    fill(lerpColor(sfc, efc, x / zd));
     rect(x, 0, zinc, h);
   }
   for (let x = 0; x < zd; x += zinc) {
@@ -291,7 +293,7 @@ function drawPool(zd) {
   push(); // t
   rotateX(-PI / 2);
   for (let y = 0; y < zd - zinc; y += zinc) {
-    fill(lerpColor(fc, efc, y / zd));
+    fill(lerpColor(sfc, efc, y / zd));
     rect(0, y, w, zinc);
   }
   for (let x = 0; x < w; x += winc) {
@@ -306,7 +308,7 @@ function drawPool(zd) {
   translate(w, 0);
   rotateY(PI / 2);
   for (let x = 0; x < zd - zinc; x += zinc) {
-    fill(lerpColor(fc, efc, x / zd));
+    fill(lerpColor(sfc, efc, x / zd));
     rect(x, 0, zinc, h);
   }
   for (let x = 0; x < zd; x += zinc) {
@@ -321,7 +323,7 @@ function drawPool(zd) {
   translate(0, h);
   rotateX(-PI / 2);
   for (let y = 0; y < zd - zinc; y += zinc) {
-    fill(lerpColor(fc, efc, y / zd));
+    fill(lerpColor(sfc, efc, y / zd));
     rect(0, y, w, zinc);
   }
   for (let x = 0; x < w; x += winc) {
@@ -334,7 +336,7 @@ function drawPool(zd) {
 
   push(); // plane
   translate(0, 0, -zd);
-  fill(lerpColor(fc, efc, 1));
+  fill(lerpColor(sfc, efc, 1));
   rect(0, 0, w, h);
   for (let x = 0; x < w; x += winc) {
     line(x, 0, x, h);
@@ -343,6 +345,10 @@ function drawPool(zd) {
     line(0, y, w, y);
   }
   pop();
+}
+
+function deviceShaken() {
+  randColors();
 }
 
 function keyPressed() {

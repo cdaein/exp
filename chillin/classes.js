@@ -33,14 +33,15 @@ class Letter {
     this.ch = ch;
     this.shadow = false;
     this.sz = sz;
+    if (this.ch == ' ') this.sz = this.sz * 0.9;
     this.blankCol = color(60, 80, 100);
     textSize(this.sz - this.sz * 0.1);
-    //    this.w = textWidth(this.ch);
-    this.w = sz;
-    this.h = sz - sz * 0.2;
-    //    this.body = Matter.Bodies.rectangle(x, y, this.w, this.h, {
-    //      frictionAir: random(.001, .1)
-    //    });
+    //		this.w = textWidth(this.ch);
+    this.w = this.sz;
+    this.h = this.sz - this.sz * 0.2;
+    //		this.body = Matter.Bodies.rectangle(x, y, this.w, this.h, {
+    //			frictionAir: random(.001, .1)
+    //		});
     this.body = Matter.Bodies.circle(x, y, this.w * 0.5, {
       frictionAir: random(0.0001, 0.1)
     });
