@@ -34,7 +34,6 @@ class Letter {
     this.shadow = false;
     this.sz = sz;
     if (this.ch == ' ') this.sz = this.sz * 0.9;
-    this.blankCol = color(60, 80, 100);
     textSize(this.sz - this.sz * 0.1);
     //		this.w = textWidth(this.ch);
     this.w = this.sz;
@@ -54,6 +53,10 @@ class Letter {
     Matter.World.remove(world, this.body);
   }
 
+  setBlankColor(bc) {
+    this.blankCol = bc;
+  }
+  
   setTextColor(fc) {
     this.tfc = fc;
   }
