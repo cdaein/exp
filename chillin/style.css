@@ -26,11 +26,23 @@ canvas {
   font-size: 12px;
   font-family: sans-serif;
   box-sizing: border-box;
-  width: 20%;
+  width: 10%;
   height: 40px;
   text-decoration: none;
   text-transform: uppercase;
 }
 #button:hover {
  background: orange; 
+}
+
+#saveButton {
+  background: lightgreen;
+  border: 0;
+  font-size: 12px;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  width: 10%;
+  height: 40px;
+  text-decoration: none;
+  text-transform: uppercase;
 }
