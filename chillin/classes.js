@@ -35,12 +35,8 @@ class Letter {
     this.sz = sz;
     if (this.ch == ' ') this.sz = this.sz * 0.9;
     textSize(this.sz - this.sz * 0.1);
-    //		this.w = textWidth(this.ch);
     this.w = this.sz;
     this.h = this.sz - this.sz * 0.2;
-    //		this.body = Matter.Bodies.rectangle(x, y, this.w, this.h, {
-    //			frictionAir: random(.001, .1)
-    //		});
     this.body = Matter.Bodies.circle(x, y, this.w * 0.5, {
       frictionAir: random(0.0001, 0.1)
     });
@@ -82,8 +78,6 @@ class Letter {
     fill(this.bfc);
     if (this.ch === ' ' && !this.shadow) fill(this.blankCol);
     noStroke();
-    // rectMode(CENTER);
-    // rect(0, 0, this.w, this.h);
     ellipse(0, 0, this.w, this.w);
     fill(this.tfc);
     translate(0, 0, 1); // z-fighting
