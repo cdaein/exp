@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Happy Holidays & Happy New Year 2020</title>
+	<script src="paper-full.min.js"></script>
+	<script src="sketch.js" type="text/javascript" canvas="canvas" async></script>
+	<style>
+		*,
+		*:before,
+		*:after {
+			box-sizing: border-box;
+/*			transition: all .6s;*/
+		}
+		
+		html, body {
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			height: 100%;
+		}
+		body {
+			background-color: black;
+		}
+		
+		canvas {
+			position: absolute;
+			background-color: black;
+			z-index: -1;
+		}
+		
+		p {
+			margin: 0;
+			padding: 0;
+		}
+		
+		.permission-modal-container {
+			width: 280px;
+			height: 160px;
+			position: absolute;
+			left: calc(50% - 140px);
+			top: calc(50% - 80px);
+			border-radius: 12px;
+			border: 1px solid hsl(46, 25%, 52%);
+			margin: 0;
+			padding: 0;
+			box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+			
+			background-color: black;
+			font-family: sans-serif;
+			color: #d4af37;
+			font-weight: 700;
+			text-align: center;
+			
+			overflow: hidden;
+			
+			display: none;
+		}
+		
+		.permission-modal-container p {
+			margin: 0;
+			padding: 24px;
+			height: 65%;
+			font-size: 16px;
+			letter-spacing: .2px;
+			line-height: 1.25;
+		}
+		
+		.permission-modal-container .button-container {
+			width: 100%;
+			height: calc(35% + 2px); /* quick and dirty fix. meh. */
+			display: flex;
+			justify-content: center;
+		}
+		.permission-modal-container .button-container button {
+			width: 50%;
+			background: none;
+			color: #d4af37;
+			font-size: 16px;
+			letter-spacing: .2px;
+			border: none;
+			border-top: 1px solid hsl(46, 25%, 52%);
+		}
+		.permission-modal-container .button-container button:first-child {
+			border-right: 1px solid hsl(46, 25%, 52%);
+		}
+		.permission-modal-container .button-container button:hover,
+		.permission-modal-container .button-container button:active {
+			cursor: pointer;
+			color: black;
+			background-color: hsl(46, 25%, 52%);
+		}
+		
+	</style>
+</head>
+<body>
+	
+	<canvas id="canvas"></canvas>
+	
+	<div class="permission-modal-container">
+		<p>For full experience, please allow access to motion sensors on your phone.</p>
+		<div class="button-container">
+			<button id="button-cancel">Cancel</button>
+			<button id="button-allow">Allow</button>
+		</div>
+	</div>
+	
+	<button class="write-modal-toggle">icon</button>
+	<div class="write-modal-container">
+		<input type="text" placeholder="write your message.">
+		<button>generate url</button>
+		<p>https://url.com</p>
+		<p>@cdaein</p>
+	</div>
+	
+</body>
+</html>
