@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="Happy Holidays & Happy New Year 2020">
 	<meta name="og:description" content="Interactive holiday card for the web">
-	<meta property="og:image" content="thumbnail.png">
+	<meta property="og:image" content="https://exp.paperdove.com/happy-holidays-2020/thumbnail.png">
+	
 	<title>Happy Holidays & Happy New Year 2020</title>
 	<script src="paper-full.min.js"></script>
 	<script src="sketch.js" type="text/javascript" canvas="canvas" async></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-8129807-9"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+		gtag('config', 'UA-8129807-9');
+	</script>
+	
 	<!-- 
 		SVG icons from https://feathericons.com
 		used under MIT license.
@@ -114,10 +127,13 @@
 			height: 50px;
 			background: none;
 			border: none;
+			cursor: pointer;
 		}
+
 		.msg-modal-toggle svg {
 			color: orange;
 		}
+
 		.msg-modal-close {
 			position: absolute;
 			right: 0;
@@ -126,7 +142,9 @@
 			height: 50px;
 			background: none;
 			border: none;
+			cursor: pointer;
 		}
+
 		.msg-modal-close svg.close {
 			color: hsl(46, 40%, 52%);
 			position: relative;
@@ -146,17 +164,15 @@
 			padding: 30px 0;
 			box-shadow: 0 0 5px rgba(0, 0, 0, .5);
 
-			background-color: #191919;
+			background-color: #202020;
 			font-family: sans-serif;
 			color: #d4af37;
 
 			text-align: center;
 			line-height: 1.25;
 			overflow-y: scroll;
-			
-			transition: top .4s ease-in-out;
 
-/*			display: none;*/
+			transition: top .4s ease-in-out;
 		}
 
 		.msg-modal-container .msg-instruction {
@@ -196,6 +212,19 @@
 			border-radius: 8px;
 		}
 
+		.msg-modal-container input.msg::placeholder {
+			color: #999;
+			opacity: 1;
+		}
+
+		.msg-modal-container input.msg:-ms-input-placeholder {
+			color: #999;
+		}
+
+		.msg-modal-container input.msg::-ms-input-placeholder {
+			color: #999;
+		}
+
 		.msg-modal-container #url-generate-button {
 			width: 100%;
 			height: 50px;
@@ -205,20 +234,20 @@
 			font-size: 16px;
 			border: 1px solid hsl(46, 25%, 52%);
 			border-radius: 8px;
+			background: linear-gradient(to bottom, #333, hsl(46, 25%, 30%));
 			background-color: #333;
 			letter-spacing: 0.2px;
+			cursor: pointer;
 		}
 
 		.msg-modal-container #url-generate-button:hover {
-			cursor: pointer;
-			color: black;
-			background-color: hsl(46, 25%, 52%);
+			background: linear-gradient(to bottom, hsl(46, 25%, 30%), #333);
+			background-color: hsl(46, 25%, 30%);
 		}
 
 		.msg-modal-container .url-copy-group {
 			display: flex;
 			margin-bottom: 16px;
-			/*			outline: 1px solid red;*/
 		}
 
 		.msg-modal-container #url-generated {
@@ -226,36 +255,26 @@
 			height: 50px;
 			font-size: 16px;
 			padding: 0 8px;
-			border: 1px solid gray;
+			/*			border: 1px solid #666;*/
+			border-right: none;
 			border-radius: 8px 0 0 8px;
-			background: black;
-			color: gray;
+			background: #aaa;
+			color: #333;
 			line-height: 50px;
 			overflow: hidden;
 		}
 
 		::placeholder {
-			color: gray;
+			color: #444;
 			opacity: 1;
 		}
 
 		:-ms-input-placeholder {
-			color: gray;
+			color: #444;
 		}
 
 		::-ms-input-placeholder {
-			color: gray;
-		}
-
-		::-moz-selection {
-			/* Code for Firefox */
-			color: black;
-			background: lightgray;
-		}
-
-		::selection {
-			color: black;
-			background: lightgray;
+			color: #444;
 		}
 
 		.msg-modal-container #url-open-newtab {
@@ -263,10 +282,11 @@
 			width: 30%;
 			height: 50px;
 			font-size: 16px;
-			border: 1px solid gray;
+			border: 1px solid hsl(46, 25%, 52%);
 			border-left: none;
 			border-radius: 0 8px 8px 0;
-			background: #333;
+			background: linear-gradient(to bottom, #333, hsl(46, 25%, 30%));
+			background-color: #333;
 			color: #d4af37;
 			text-decoration: none;
 			line-height: 46px;
@@ -276,8 +296,8 @@
 		}
 
 		.msg-modal-container #url-open-newtab:hover {
-			color: black;
-			background: hsl(46, 25%, 52%);
+			background: linear-gradient(to bottom, hsl(46, 25%, 30%), #333);
+			background-color: hsl(46, 25%, 30%);
 		}
 
 		.msg-modal-container .credit-container {
@@ -293,32 +313,20 @@
 		}
 
 		.anim-flash {
-			animation: flash .6s ease-in;
+			animation: flash .4s ease-in;
 		}
 
 		@keyframes flash {
 			from {
-				background-color: hsl(46, 25%, 52%)
+				background-color: hsl(46, 100%, 100%)
 			}
 
 			to {
-				background-color: black;
+				background-color: #aaa;
 			}
 		}
+
 	</style>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-8129807-9"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag('js', new Date());
-
-		gtag('config', 'UA-8129807-9');
-
-	</script>
 </head>
 
 <body>
@@ -326,11 +334,17 @@
 	<canvas id="canvas"></canvas>
 
 	<button class="msg-modal-toggle">
-		<svg class="gear" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+		<svg class="gear" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings">
+			<circle cx="12" cy="12" r="3"></circle>
+			<path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+		</svg>
 	</button>
 	<div class="msg-modal-container">
 		<button class="msg-modal-close">
-			<svg class="close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+			<svg class="close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+				<line x1="18" y1="6" x2="6" y2="18"></line>
+				<line x1="6" y1="6" x2="18" y2="18"></line>
+			</svg>
 		</button>
 		<p class="msg-instruction">
 			Write your own message and share the card with others.
@@ -346,7 +360,7 @@
 			</li>
 			<li class="url-copy-group">
 				<div>3. </div>
-				<input id="url-generated" type="text" placeholder="Copy this URL"> 
+				<input id="url-generated" type="text" placeholder="Click to copy link">
 				<a id="url-open-newtab" target="_blank">open</a>
 			</li>
 		</ol>
@@ -355,7 +369,7 @@
 			<p>
 				Design by @<a href="https://www.instagram.com/justsayhye/" target="_blank">justsayhye</a>
 				<br>
-				Coding by @<a href="https://www.instagram.com/cdaein/" target="_blank">cdaein</a>
+				Dev by @<a href="https://www.instagram.com/cdaein/" target="_blank">cdaein</a>
 			</p>
 		</div>
 
@@ -370,4 +384,5 @@
 	</div>
 
 </body>
+
 </html>
