@@ -163,7 +163,7 @@ function onAskButtonClicked() {
 		let i = 0;
 		function animate() {
 			let fr = Math.floor( map(rotationX, -20, 20, 0, s.images.length) );
-			fr = constrain(fr, 0, s.images.length);
+			fr = clamp(fr, 0, s.images.length);
 			fr = (fr + Math.floor(s.images.length/2))%s.images.length;
 			s.drawImage( fr );
 			requestAnimationFrame(animate);
