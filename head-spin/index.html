@@ -4,6 +4,13 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<style>
+		*,
+		*:before,
+		*:after {
+			box-sizing: border-box;
+		}
+		
+		html,
 		body {
 			margin: 0;
 			padding: 0;
@@ -146,16 +153,16 @@ function onAskButtonClicked() {
 			s.size(window.innerWidth, window.innerHeight);
 		})
 		
-		window.addEventListener('mousemove', (e) => {
-				rotationX = e.clientX,
-				rotationY = e.clientY
-		})
+//		window.addEventListener('mousemove', (e) => {
+//				rotationX = e.clientX,
+//				rotationY = e.clientY
+//		})
 		
 //		console.log(s);
 	
 		let i = 0;
 		function animate() {
-			let fr = Math.floor( map(rotationX, -180, 180, 0, s.images.length) );
+			let fr = Math.floor( map(rotationX, -60, 60, 0, s.images.length) );
 			s.drawImage( fr );
 			requestAnimationFrame(animate);
 		}
