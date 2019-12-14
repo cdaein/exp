@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		#canvas {
+			background-color: black;
+		}
+	</style>
+	<script type="module">
+
+		import Sequencer from './sequencer/sequencer.js'
+	
+		const s = Sequencer.make({
+			canvas: document.querySelector('#canvas'),
+			from: 'img/head_00.jpg',
+			to: 'img/head_21.jpg',
+			scaleMode: 'contain',
+			playMode: 'none'
+		});
+		s.size(window.innerWidth, window.innerHeight);
+		
+		window.addEventListener('resize', () => {
+			s.size(window.innerWidth, window.innerHeight);
+		})
+		
+		let mouse = {x:0, y:0};
+		
+		window.addEventListener('mousemove', (e) => {
+			mouse = {
+				x: e.clientX,
+				y: e.clientY
+			}
+		})
+		
+		console.log(s);
+	
+		let i = 0;
+		function animate() {
+			const fr = Math.floor( (mouse.x / window.innerWidth) * s.images.length );
+			s.drawImage( fr );
+//			console.log(mouse.x, mouse.y);
+			requestAnimationFrame(animate);
+		}
+		animate();
+	
+	</script>
+</head>
+
+<body>
+
+	<canvas id="canvas"></canvas>
+
+</body>
+
+</html>
