@@ -12,8 +12,124 @@
 		#canvas {
 			background-color: black;
 		}
+
+		p {
+			margin: 0;
+			padding: 0;
+		}
+
+		/********** permission modal **********/
+		.permission-modal-container {
+			width: 280px;
+			height: 160px;
+			position: absolute;
+			left: calc(50% - 140px);
+			top: calc(50% - 80px);
+			border-radius: 12px;
+			border: 1px solid hsl(46, 25%, 52%);
+			margin: 0;
+			padding: 0;
+			box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+
+			background-color: black;
+			font-family: sans-serif;
+			color: #d4af37;
+			font-weight: 700;
+			text-align: center;
+
+			overflow: hidden;
+
+			display: none;
+		}
+
+		.permission-modal-container p {
+			margin: 0;
+			padding: 24px;
+			height: 65%;
+			font-size: 16px;
+			letter-spacing: 0.2px;
+			line-height: 1.25;
+		}
+
+		.permission-modal-container .button-container {
+			width: 100%;
+			height: calc(35% + 2px);
+			/* quick and dirty fix. meh. */
+			display: flex;
+			justify-content: center;
+		}
+
+		.permission-modal-container .button-container button {
+			width: 50%;
+			background: none;
+			color: #d4af37;
+			font-size: 16px;
+			letter-spacing: 0.2px;
+			border: none;
+			border-top: 1px solid hsl(46, 25%, 52%);
+		}
+
+		.permission-modal-container .button-container button:first-child {
+			border-right: 1px solid hsl(46, 25%, 52%);
+		}
+
+		.permission-modal-container .button-container button:hover {
+			cursor: pointer;
+			color: black;
+			background-color: hsl(46, 25%, 52%);
+		}
 	</style>
 	<script type="module">
+		/***************************************** device orientation test **********/
+let permissionGranted = false;
+let nonios13device = false;
+let permissionModal;
+let rotationX = 0;
+let rotationY = 0; // for device orientation event
+
+if (typeof (DeviceOrientationEvent) !== 'undefined' && typeof (DeviceOrientationEvent.requestPermission) === 'function') {
+	DeviceOrientationEvent.requestPermission()
+		.catch(() => {
+			// show permission dialog only the first time
+			permissionModal = document.querySelector('.permission-modal-container');
+			permissionModal.style.display = 'block';
+
+			const cancelButton = document.querySelector('#button-cancel');
+			cancelButton.addEventListener('click', function () {
+				permissionModal.remove();
+			})
+			const allowButton = document.querySelector('#button-allow');
+			allowButton.addEventListener('click', onAskButtonClicked);
+
+			throw error; // keep the promise chain as rejected
+		})
+		.then(() => {
+			// this runs on subsequent visits
+			permissionGranted = true;
+		})
+} else {
+	// it's up to you how to handle non ios 13 devices
+	nonios13device = true;
+	console.log('non iOS 13 device is being used.');
+}
+
+// will handle first time visiting to grant access
+function onAskButtonClicked() {
+	permissionModal.remove();
+	DeviceOrientationEvent.requestPermission().then(response => {
+		if (response === 'granted') {
+			permissionGranted = true;
+		} else {
+			permissionGranted = false;
+		}
+	}).catch(console.error);
+}
+		
+		
+			window.addEventListener('deviceorientation', function (e) {
+		rotationX = e.gamma;
+		rotationY = e.beta;
+	});
 
 		import Sequencer from './sequencer/sequencer.js'
 	
@@ -43,12 +159,24 @@
 	
 		let i = 0;
 		function animate() {
-			const fr = Math.floor( (mouse.x / window.innerWidth) * s.images.length );
+			let fr = Math.floor( map(rotationX, -180, 180, 0, s.images.length) );
 			s.drawImage( fr );
-//			console.log(mouse.x, mouse.y);
 			requestAnimationFrame(animate);
 		}
 		animate();
+		
+		/********************************************************************** utils **********/
+function clamp(num, min, max) {
+	return num <= min ? min : num >= max ? max : num;
+}
+
+function map(value, start1, stop1, start2, stop2) {
+	return start2 + (stop2 - start2) * ((value - start1) / (stop1 - start1));
+}
+
+function lerp(start, stop, amt) {
+	return start + (stop - start) * amt;
+}
 	
 	</script>
 </head>
