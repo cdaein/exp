@@ -162,7 +162,8 @@ function onAskButtonClicked() {
 	
 		let i = 0;
 		function animate() {
-			let fr = Math.floor( map(rotationX, -60, 60, 0, s.images.length) );
+			let fr = Math.floor( map(rotationX, -10, 10, 0, s.images.length) );
+			fr = (fr + Math.floor(s.images.length/2))%s.images.length;
 			s.drawImage( fr );
 			requestAnimationFrame(animate);
 		}
