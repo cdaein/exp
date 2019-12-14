@@ -10,7 +10,7 @@
 		}
 
 		#canvas {
-			background-color: black;
+			background-color: red;
 		}
 
 		p {
@@ -146,16 +146,12 @@ function onAskButtonClicked() {
 			s.size(window.innerWidth, window.innerHeight);
 		})
 		
-		let mouse = {x:0, y:0};
-		
 		window.addEventListener('mousemove', (e) => {
-			mouse = {
-				x: e.clientX,
-				y: e.clientY
-			}
+				rotationX = e.clientX,
+				rotationY = e.clientY
 		})
 		
-		console.log(s);
+//		console.log(s);
 	
 		let i = 0;
 		function animate() {
