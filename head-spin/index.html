@@ -153,24 +153,30 @@ function onAskButtonClicked() {
 			s.size(window.innerWidth, window.innerHeight);
 		})
 		
-//		window.addEventListener('mousemove', (e) => {
-//				rotationX = e.clientX,
-//				rotationY = e.clientY
-//		})
+		window.addEventListener('mousemove', (e) => {
+			rotationX = e.clientX;
+			rotationY = e.clientY;
+		});
 		
 //		console.log(s);
 	
 		let i = 0;
 		function animate() {
-			let fr = Math.floor( map(rotationX, -45, 45, s.images.length, 0) );
+			let fr;
+			if (nonios13device) {
+				fr = Math.floor( map(rotationX, window.innerWidth, 0, 0, s.images.length) );
+			} else {
+				fr = Math.floor( map(rotationX, 45, -45, 0, s.images.length) );
+			}
 			fr = clamp(fr, 0, s.images.length);
 			fr = (fr + Math.floor(s.images.length/2))%s.images.length;
 			s.drawImage( fr );
+			
 			requestAnimationFrame(animate);
 		}
 		animate();
 		
-		/********************************************************************** utils **********/
+/********************************************************************** utils **********/
 function clamp(num, min, max) {
 	return num <= min ? min : num >= max ? max : num;
 }
