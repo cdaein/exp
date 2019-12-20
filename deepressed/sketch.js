@@ -84,9 +84,9 @@ function draw() {
 	rotateX(rx);
 	rotateY(ry);
 
-	const numTunnels = 30;
+	const numTunnels = 20;
 	for (let i = 0; i < numTunnels; i++) {
-		fill(250 - i * 10);
+		fill(250 - i * 13);
 		tunnelUnit(300 - i * 200, 200);
 	}
 
