@@ -55,14 +55,14 @@ canvas {
 	left: calc(50% - 140px);
 	top: calc(50% - 80px);
 	border-radius: 12px;
-	border: 1px solid hsl(46, 25%, 52%);
+/*	border: 1px solid hsl(46, 25%, 52%);*/
 	margin: 0;
 	padding: 0;
 	box-shadow: 0 0 5px rgba(0, 0, 0, .5);
 
-	background-color: black;
+	background-color: white;
 	font-family: sans-serif;
-	color: #d4af37;
+	color: black;
 	font-weight: 700;
 	text-align: center;
 
@@ -91,7 +91,7 @@ canvas {
 .permission-modal-container .button-container button {
 	width: 50%;
 	background: none;
-	color: #d4af37;
+	color: black;
 	font-size: 16px;
 	letter-spacing: 0.2px;
 	border: none;
@@ -105,5 +105,5 @@ canvas {
 .permission-modal-container .button-container button:hover {
 	cursor: pointer;
 	color: black;
-	background-color: hsl(46, 25%, 52%);
+	background-color: lightskyblue;
 }

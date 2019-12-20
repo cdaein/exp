@@ -53,52 +53,6 @@ function preload() {
 function setup() {
 	w = windowWidth;
 	h = windowHeight - 40;
-	
-	/***************************************** device orientation test **********/
-	createPermissionModal(); // hidden by default
-	let permissionGranted = false;
-	let nonios13device = false;
-	let permissionModal;
-//	let rotationX = 0;
-//	let rotationY = 0; // for device orientation event
-
-	if (typeof (DeviceOrientationEvent) !== 'undefined' && typeof (DeviceOrientationEvent.requestPermission) === 'function') {
-		DeviceOrientationEvent.requestPermission()
-			.catch(() => {
-				// show permission dialog only the first time
-				permissionModal = document.querySelector('.permission-modal-container');
-				permissionModal.style.display = 'block';
-
-				const cancelButton = document.querySelector('#button-cancel');
-				cancelButton.addEventListener('click', function () {
-					permissionModal.remove();
-				})
-				const allowButton = document.querySelector('#button-allow');
-				allowButton.addEventListener('click', onAskButtonClicked);
-
-				throw error; // keep the promise chain as rejected
-			})
-			.then(() => {
-				// this runs on subsequent visits
-				permissionGranted = true;
-			})
-	} else {
-		// it's up to you how to handle non ios 13 devices
-		nonios13device = true;
-		console.log('non iOS 13 device is being used.');
-	}
-
-	// will handle first time visiting to grant access
-	function onAskButtonClicked() {
-		permissionModal.remove();
-		DeviceOrientationEvent.requestPermission().then(response => {
-			if (response === 'granted') {
-				permissionGranted = true;
-			} else {
-				permissionGranted = false;
-			}
-		}).catch(console.error);
-	}
 
 	setAttributes("premultipliedAlpha", true);
 	setAttributes("antialias", true);
@@ -154,6 +108,53 @@ function setup() {
 	saveButton.id("saveButton");
 	saveButton.position(input.width + button.width, input.y);
 	saveButton.mousePressed(saveImage);
+
+	/***************************************** device orientation test **********/
+	createPermissionModal(); // hidden by default
+	let permissionGranted = false;
+	let nonios13device = false;
+	let permissionModal;
+	//	let rotationX = 0;
+	//	let rotationY = 0; // for device orientation event
+
+	if (typeof (DeviceOrientationEvent) !== 'undefined' && typeof (DeviceOrientationEvent.requestPermission) === 'function') {
+		DeviceOrientationEvent.requestPermission()
+			.catch(() => {
+				// show permission dialog only the first time
+				permissionModal = document.querySelector('.permission-modal-container');
+				permissionModal.style.display = 'block';
+
+				const cancelButton = document.querySelector('#button-cancel');
+				cancelButton.addEventListener('click', function () {
+					permissionModal.remove();
+				})
+				const allowButton = document.querySelector('#button-allow');
+				allowButton.addEventListener('click', onAskButtonClicked);
+
+				throw error; // keep the promise chain as rejected
+			})
+			.then(() => {
+				// this runs on subsequent visits
+				permissionGranted = true;
+			})
+	} else {
+		// it's up to you how to handle non ios 13 devices
+		nonios13device = true;
+		console.log('non iOS 13 device is being used.');
+	}
+
+	// will handle first time visiting to grant access
+	function onAskButtonClicked() {
+		permissionModal.remove();
+		DeviceOrientationEvent.requestPermission().then(response => {
+			if (response === 'granted') {
+				permissionGranted = true;
+			} else {
+				permissionGranted = false;
+			}
+		}).catch(console.error);
+	}
+
 }
 
 function saveImage() {
