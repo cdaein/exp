@@ -19,12 +19,16 @@
     <title>Happy Holidays</title>
 
     <script>
+      let permissionGranted = false;
+      let nonios13device = false;
+      let permissionModal;
+
       if (
         typeof DeviceOrientationEvent !== "undefined" &&
         typeof DeviceOrientationEvent.requestPermission === "function"
       ) {
         DeviceOrientationEvent.requestPermission()
-          .catch((error) => {
+          .catch(() => {
             // show permission dialog only the first time
             permissionModal = document.querySelector(
               ".permission-modal-container",
@@ -64,6 +68,7 @@
           .catch(console.error);
       }
     </script>
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
